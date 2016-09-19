@@ -1,4 +1,4 @@
-@import url('fonts/fonts.css');
+@import url('../fonts/fonts.css');
 @import url('reset.css');
 
 /* General Demo Style */
@@ -24,7 +24,7 @@ a{
 /* Header Style */
 
 
-body {
+body#splash {
 	background: #310404 url(../images/8649808366_303f841d7f_o.jpg) no-repeat top left;
 	font-family: 'BebasNeueRegular';
 	background-size: cover;
@@ -117,16 +117,16 @@ h1.main,p.demos {
 }
 .sp-circle-link {
 	position: absolute;
-	left: 50%;
-	bottom: 15px;
+	left: 52%;
+	bottom: 30px;
 	margin-left: -50px;
 	text-align: center;
-	line-height: 100px;
-	width: 100px;
-	height: 100px;
+	line-height: 75px;
+	width: 75px;
+	height: 75px;
 	background: #fff;
 	color: #3f1616;
-	font-size: 25px;
+	font-size: 18px;
 	border-radius: 50%;
 	animation: fadeInRotate 1s linear 13.5s backwards;
 	transform: scale(1) rotate(0deg);
@@ -135,11 +135,21 @@ h1.main,p.demos {
 	background: #85373b;
 	color: #fff;
 }
+.theo {
+	position:absolute;
+	bottom:15px;
+	left:15px;
+	color: #fff;
+	font-size:15px;
+	font-family: 'Abel', sans-serif;
+}
 .skip {
 	position:absolute;
 	bottom:15px;
 	right:15px;
 	color: #fff;
+	font-size:15px;
+	font-family: 'Abel', sans-serif;
 }
 /*.skip:hover {
 	background: #85373b;

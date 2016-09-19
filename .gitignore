@@ -26,7 +26,12 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+
+#test files
 test/
+master/json/*_*.json
+*_*.html
+development/
 
 .sass-cache/
 *.css.map

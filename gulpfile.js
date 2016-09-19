@@ -6,6 +6,7 @@ var
 	newer = require('gulp-newer'),
 	concat = require('gulp-concat'),
 	htmlclean = require('gulp-htmlclean'),
+	cleanCSS = require('gulp-clean-css'),
 	gulpif = require('gulp-if'),
 	imagemin = require('gulp-imagemin'),
 	imacss = require('gulp-imacss'),
@@ -26,6 +27,7 @@ var
 
 var devBuild,
     source,
+    mainjs,
     dest,
     htmlSources,
     imagesSources,
@@ -42,6 +44,8 @@ var devBuild,
 
 // file locations
 
+
+
 devBuild = process.env.NODE_ENV || 'development';
 
 if (devBuild==='development') {
@@ -55,7 +59,10 @@ if (devBuild==='development') {
 	// devBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'),
 
 	source = 'source/master/';
-	
+	mainjs = {
+		in: source + "*.js",
+		out: dest
+	}	
 	htmlSources = {
 		in: source + '*.html',
 		watch: [source + '*.html', source + 'template/**/*'],
@@ -101,7 +108,7 @@ if (devBuild==='development') {
 
 	fontsSources = {
 		in: source + 'fonts/*.*',
-		out: cssSources.out + 'fonts/'
+		out: dest + 'master/fonts/'
 	};
 
 	jsSources = {
@@ -139,6 +146,14 @@ gulp.task('clean', function() {
 	]);
 });
 
+// load datas
+gulp.task('mainjs', function() {
+	gulp.src(mainjs.in)
+		.pipe(gulp.dest(mainjs.out))
+		// .pipe(connect.reload())
+		.pipe(browsersync.reload({ stream: true }));
+});
+
 // build HTML files
 gulp.task('html', function() {
 	var page = gulp.src(htmlSources.in).pipe(preprocess({ context: htmlSources.context }));
@@ -174,15 +189,15 @@ gulp.task('fonts', function() {
 		.pipe(gulp.dest(fontsSources.out));
 });
 
-// compile Sass
-gulp.task('css', ['imguri'], function() {
-	return gulp.src(cssSources.in)
-		// .pipe(sass(cssSources.sassOpts))
-		.pipe(size({title: 'CSS in '}))
-		.pipe(pleeease(cssSources.pleeeaseOpts))
-		.pipe(size({title: 'CSS out '}))
-		.pipe(gulp.dest(cssSources.out))
-		.pipe(browsersync.reload({ stream: true }));
+// compile css
+
+gulp.task('css', function(){
+	gulp.src(cssSources.in)
+	// .pipe(concat('style.css'))
+	.pipe(gulpif(devBuild==='production', cleanCSS()))
+	.pipe(gulp.dest(cssSources.out))
+	// .pipe(connect.reload())
+	.pipe(browsersync.reload({ stream: true }));
 });
 
 // compile Sass
@@ -249,7 +264,7 @@ gulp.task('browsersync', function() {
 });
 
 // default task
-gulp.task('default', ['html', 'images', 'fonts', 'css', 'js', 'json', 'browsersync'], function() {
+gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'json', 'browsersync'], function() {
 
 	// html changes
 	gulp.watch(htmlSources.watch, ['html', browsersync.reload]);

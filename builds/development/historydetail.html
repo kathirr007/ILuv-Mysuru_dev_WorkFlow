@@ -9,19 +9,14 @@
 <meta name="author" content="">
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
-<!--<link rel="stylesheet" type="text/css" href="master/css/menu.css">-->
-<link rel="stylesheet" href="master/css/menu-font-awesome.css">
-<link rel="stylesheet" href="master/css/searchbox.css">
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
-<!--<link href="master/css/media.css" rel="stylesheet">-->
-<script type="text/javascript" src="cordova.js"></script>
+<!--<link href="master/css/media.css" rel="stylesheet">
+<script type="text/javascript" src="cordova.js"></script>-->
 <script type="text/javascript" src="index.js"></script>
 <script src="master/js/menu-jquery.js"></script>
 <script src="master/js/menu-jquery1.js"></script>  
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" type="text/css" href="master/css/map.css">
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&sensor=false"></script>
 <style>
 
 </style>
@@ -247,86 +242,6 @@ pid = getPid();
   }
             out += "</div>";
 
-$.each(arr,function(idx){
-if(arr[idx].placeid == pid) {
-
-var lati = arr[idx].lati;
-var longi = arr[idx].longi;
-
-var center = new google.maps.LatLng(lati, longi);
-var factory = new google.maps.LatLng(lati, longi);
-
-  out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
-  out2 += "</div>";
-  out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
-  out3 += "</div>";
-  maps += "</div>";
-
-
-
-function initialize() {
-	
-  var mapOptions = {
-    center: center,
-    zoom: 16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-  /*var content = '<div id="iw-container">' +
-                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
-                    '<div class="iw-content">' +
-                      '<div class="iw-subTitle">History</div>' +
-                      '<img src="images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
-                      '<div class="iw-subTitle">Contacts</div>' +
-                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
-                    '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';*/
-  var infowindow = new google.maps.InfoWindow({
-    content: content,
-    maxWidth: 350
-  });
-   
-  // marker options
-  var marker = new google.maps.Marker({
-    position: factory,
-    map: map,
- title: arr[idx].title 
-  });
-  /*google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });*/
-
-  google.maps.event.addListener(map, 'click', function() {
-    infowindow.close();
-  });
-
-  google.maps.event.addListener(infowindow, 'domready', function() {
-    var iwOuter = $('.gm-style-iw');
-    var iwBackground = iwOuter.prev();
-    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-    iwOuter.parent().parent().css({left: '115px'});
-    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
-    var iwCloseBtn = iwOuter.next();
-    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
-    if($('.iw-content').height() < 140){
-      $('.iw-bottom-gradient').css({display: 'none'});
-    }
-    iwCloseBtn.mouseout(function(){
-      $(this).css({opacity: '1'});
-    });
-  });
-}
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-});
 document.getElementById("id01").innerHTML = out2;
 document.getElementById("id02").innerHTML = maps;
 document.getElementById("id03").innerHTML = out3;

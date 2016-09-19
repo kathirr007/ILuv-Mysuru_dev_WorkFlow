@@ -110,9 +110,7 @@
 /*	Making the form responsive. Remove these media queries
     if you don't need the form to work on mobile devices. */
 
-
-
-@media (max-width: 900px){
+@media (max-width: 900px) {
 
     .form-register{
         margin: 20px auto;
@@ -134,14 +132,13 @@
         margin-left: -25px;
     }
 
-    .form-sign-in-with-social{
+    .form-sign-in-with-social {
         margin-top: 105px;
     }
+
 }
 
-
-
-@media (max-width: 600px){
+@media (max-width: 600px) {
 
     .form-register-with-email .form-white-background{
         width: 90%;
@@ -164,8 +161,8 @@
         display: inline-block;
         margin-left: 0;
     }
-
-    .form-register-with-email textarea{
+	
+	 .form-register-with-email textarea{
         display: block;
         margin: 0 auto;
     }
@@ -184,4 +181,5 @@
         left: 50%;
         margin-left: -25px;
     }
+
 }

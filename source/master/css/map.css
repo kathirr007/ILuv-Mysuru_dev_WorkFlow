@@ -9,7 +9,7 @@ body {
 #map-canvas {
 	margin: 0;
 	padding: 0;
-	height: 400px;
+	height: 250px;
 	max-width: none;
 	border: 1px solid RGBA(152, 153, 153, 0.75) !important;
 }
