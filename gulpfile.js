@@ -89,7 +89,7 @@ if (devBuild==='development') {
 	cssSources = {
 		// in: [source + 'scss/main.scss', source + 'css/**/*'],
 		in: source + 'css/**/*',
-		watch: [source + 'scss/**/*', '!' + imguri.out + imguri.filename],
+		watch: [source + 'scss/**/*', source + 'css/**/*', '!' + imguri.out + imguri.filename],
 		out: dest + 'master/css/',
 		sassOpts: {
 			outputStyle: 'nested',

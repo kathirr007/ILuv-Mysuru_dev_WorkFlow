@@ -14,6 +14,7 @@ body {
 	-ms-text-size-adjust: none;
 	margin: 0px;
 	font-size:13px;
+	background-color:#0f2b50;
 }
 a {
 	outline: none !important;
@@ -48,12 +49,8 @@ a {
 * {
 	margin: 0px;
 }
-.main_menu_bg {
+.main_menu_bg, body.details {
 	background-color:#0f2b50;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 }
 .icon_title {
 	text-align: center !important;
@@ -155,10 +152,13 @@ ul {
 	padding:10px !important;
 	background-color:rgba(255, 255, 255,0) !important;	
 	}*/
-div#id03 div#details > div {
+#tabs #id03 {
+	padding: 10px;
+}	
+div#id04 div#details > div {
 	padding:10px !important;
 	}	
-div#id03 div#details > div, div#id03 div#details > div em, div#id03 div#details div span, div#id03 div#details div div,  div#id03 div#details p, div#id03 div#details p span, div#id03 div#details p div,  div#id03 div#details p div span {
+div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span {
 	color:#222222 !important; 
 	font-family: 'Abel', sans-serif !important;
 	font-size:16px !important; 
@@ -234,7 +234,7 @@ div#id03 div#details > div, div#id03 div#details > div em, div#id03 div#details 
 
 #placedetailbanner {width:auto; margin: 0px !important;overflow: hidden !important;}
 #box1 {
-	width: 98%;
+	/* width: 98%; */
 	margin: auto;
 	opacity: 0.9;
 }
@@ -248,8 +248,9 @@ div#id03 div#details > div, div#id03 div#details > div em, div#id03 div#details 
  color:#fff;
  padding:10px;
  cursor:pointer;
- width:97%;
+ width: 97%;
  margin: 0 auto;
+ box-sizing: border-box;
  }
 #mapToggle i {
  float:right;
