@@ -128,7 +128,7 @@ if (devBuild==='development') {
 			baseDir: dest,
 			index: 'index.html'
 		},
-		open: false,
+		open: true,
 		notify: true
 	};
 
