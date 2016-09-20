@@ -30,7 +30,7 @@ nbproject
 #test files
 test/
 master/json/*_*.json
-*_*.html
+msater/*_*.html
 development/
 
 .sass-cache/
