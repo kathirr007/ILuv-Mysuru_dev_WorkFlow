@@ -31,7 +31,8 @@ nbproject
 test/
 master/json/*_*.json
 msater/*_*.html
-development/
+*_mod*
+#development/
 
 .sass-cache/
 *.css.map
