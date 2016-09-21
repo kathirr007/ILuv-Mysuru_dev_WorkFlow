@@ -103,41 +103,57 @@
     <div class="clear"></div>
     <div id="id01"></div>
     <script>
-function getUrl (path, pages){
-for(i=0; i<pages.length; i++){
-   if (pages[i][0] || pages[i][1] === location.pathname){
-   	return function(){
+var xmlhttp = new XMLHttpRequest(),
+	pages = [
+				
+				["placesofinterest","placesofinterestdetail","placesInterest"],
+				["history","historydetail","historygeography"],
+				["finedine","finedinedetail","dineRestaurants"],
+				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
+				["lifestyle","lifestyledetail","lifestyleFashion"],
+				
+				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
+			],
+	url,
+	url_link,
+ 	pathname = location.pathname.split("/")[1].split(".")[0],
+	pathPid = location.href.slice(-16);
+// 		if (location.pathname.includes("detail")){
+// pathname = pathname.split("detail")[0];}	
+// 	url = "master/json/" + pathname + ".json";
+
+// function getJson (){
+// 	var pathname = location.pathname.split("/")[1].split(".")[0];
+// 	if (location.pathname.includes("detail")){
+// pathname = pathname.split("detail")[0];
+// }
+// }
+// 	url = getUrl(pathname, pages);
+
+function getUrl (pathname, pages){
+// return function(pathname){
+	for(i=0; i<pages.length; i++){
+//    var pathname = location.pathname.split("/")[1].split(".")[0];
+   if (pathname.includes(pages[i][0] || pages[i][1])){
+   	return  function(){
        url = "master/json/" + pages[i][2] + ".json";
        url_link = pages[i][1] + ".html?pid=";   		
    	};
    }
- }		
+ }
+// };
+
 }
 
-
-
+var url = getUrl(pathname, pages);
+url();
 // var xmlhttp = new XMLHttpRequest();
 // var url = "master/json/dineRestaurants.json";
-var xmlhttp = new XMLHttpRequest(),
-	pages = [
-				["finedine","finedinedetail","dineRestaurants"],
-				["history","historydetail","historygeography"],
-				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
-				["lifestyle","lifestyledetail","lifestyleFashion"],
-				["placesofinterest","placesofinterestdetail","placesInterest"],
-				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
-			],
-// 	url,
-// 	url_link,
-	path = location.pathname,
-	pathPid = location.href.slice(-16),
-	url = getUrl(path, pages);
-	
-url();
+
 
 console.log(url);
 console.log(url_link);
-
+console.log(pathname);
 
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -148,16 +164,6 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function myFunction(response) {
- // function getPid() {
- //   var re = /pid=(\w+)$/,
- //   	  url = location.href,
- //   	  matches = re.exec(url),
- //   	  pid;
- //   if (matches.length == 2) {
- //     pid = matches[1];
- //   }
- //   return pid;
- // }
 
 var arr = JSON.parse(response),
 	i,
@@ -187,6 +193,19 @@ for(i = 0; i < arr.length; i++) {
 var gall = arr[i].galleries,
 	thumbImage;
 
+// function keysToLowerCase(arr){
+//     Object.keys(arr).forEach(function (key) {
+//         var k = key.toLowerCase();
+
+//         if (k !== key) {
+//             arr[k] = arr[key];
+//             delete arr[key];
+//         }
+//     });
+//     return (arr);
+// }
+// console.log(arr);
+
 // console.log(gall);
 
 	if (gall.length === 0) {
@@ -194,7 +213,7 @@ var gall = arr[i].galleries,
 	else {
 	thumbImage = encodeURI(arr[i].galleries[0].img_name);
 	}
-    out += "<a href=\"finedinedetail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
+    out += "<a href=" + pathname + "detail.html?pid=" + arr[i].placeid + " style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
     
     out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span><div style=\"color:#000; padding-top:15px;\"><ul style=\"float:left;\"><li><img src=\"master\/images\/adventure.png\"></li><li style=\"padding-left:15px;\"><img src=\"master\/images\/rating.png\"></li><li><span style=\"color:#989999; font-family: 'Abel', sans-serif; padding-left:15px;\">7.5 kms</span></li></ul></div></li>";
     

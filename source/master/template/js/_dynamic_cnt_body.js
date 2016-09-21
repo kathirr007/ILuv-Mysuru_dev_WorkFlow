@@ -1,55 +1,54 @@
 var xmlhttp = new XMLHttpRequest(),
-// 	pages = [
+	pages = [
 				
-// 				["placesofinterest","placesofinterestdetail","placesInterest"],
-// 				["history","historydetail","historygeography"],
-// 				["finedine","finedinedetail","dineRestaurants"],
-// 				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
-// 				["lifestyle","lifestyledetail","lifestyleFashion"],
+				["placesofinterest","placesofinterestdetail","placesInterest"],
+				["history","historydetail","historygeography"],
+				["finedine","finedinedetail","dineRestaurants"],
+				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
+				["lifestyle","lifestyledetail","lifestyleFashion"],
 				
-// 				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
-// 			],
-// 	url,
-// 	url_link,
+				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
+			],
+	url,
+	url_link,
  	pathname = location.pathname.split("/")[1].split(".")[0],
 	pathPid = location.href.slice(-16);
-		if (location.pathname.includes("detail")){
-pathname = pathname.split("detail")[0];}	
-	url = "master/json/" + pathname + ".json";
-console.log(url);
-function getJson (){
-	var pathname = location.pathname.split("/")[1].split(".")[0];
-	if (location.pathname.includes("detail")){
-pathname = pathname.split("detail")[0];
-}
-}
-	
+// 		if (location.pathname.includes("detail")){
+// pathname = pathname.split("detail")[0];}	
+// 	url = "master/json/" + pathname + ".json";
+
+// function getJson (){
+// 	var pathname = location.pathname.split("/")[1].split(".")[0];
+// 	if (location.pathname.includes("detail")){
+// pathname = pathname.split("detail")[0];
+// }
+// }
 // 	url = getUrl(pathname, pages);
 
-// function getUrl (pages){
+function getUrl (pathname, pages){
 // return function(pathname){
-// 	for(i=0; i<pages.length; i++){
-// //    var pathname = location.pathname.split("/")[1].split(".")[0];
-//    if (pathname == pages[i][0] || pages[i][1]){
-// //    	return  function(){
-//        url = "master/json/" + pages[i][2] + ".json";
-//        url_link = pages[i][1] + ".html?pid=";   		
-// //    	};
-//    }
-//  }
+	for(i=0; i<pages.length; i++){
+//    var pathname = location.pathname.split("/")[1].split(".")[0];
+   if (pathname.includes(pages[i][0] || pages[i][1])){
+   	return  function(){
+       url = "master/json/" + pages[i][2] + ".json";
+       url_link = pages[i][1] + ".html?pid=";   		
+   	};
+   }
+ }
 // };
 
-// }
+}
 
-// var url = getUrl(pages);
-// url(history);
+var url = getUrl(pathname, pages);
+url();
 // var xmlhttp = new XMLHttpRequest();
 // var url = "master/json/dineRestaurants.json";
 
 
-// console.log(url);
-// console.log(url_link);
-// console.log(pathname);
+console.log(url);
+console.log(url_link);
+console.log(pathname);
 
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
