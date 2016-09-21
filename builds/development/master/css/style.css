@@ -71,7 +71,7 @@ a {
 	height: 50px !important;
 	position:fixed;
 	background-color:#282828;
-	/* z-index:10000000000 !important; */
+	z-index:10000000000 !important;
 	width:100%;
 	bottom:0px;
 }
@@ -148,7 +148,9 @@ height:auto !important;
 width:60% !important;
 height:auto !important;
 }
-
+.hide {
+	display:none;
+}
 ul {
 	list-style-type: none;
 	margin: 0;
