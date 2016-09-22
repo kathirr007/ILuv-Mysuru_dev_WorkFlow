@@ -5,6 +5,7 @@ var
 	gulp = require('gulp'),
 	newer = require('gulp-newer'),
 	concat = require('gulp-concat'),
+	browserify = require('gulp-browserify'),
 	htmlclean = require('gulp-htmlclean'),
 	cleanCSS = require('gulp-clean-css'),
 	gulpif = require('gulp-if'),
@@ -112,8 +113,9 @@ if (devBuild==='development') {
 	};
 
 	jsSources = {
-		in: [source + 'js/jquery-ui.js',
-			 source + 'js/jquery-1.12.4.js',
+		in: [
+			 // source + 'js/jquery-ui.min.js',
+			 source + 'js/jquery-1.12.4.min.js',
 			 source + 'js/jssor.slider-21.1.5.min.js',
 			 source + 'js/carousel.js',
 			 source + 'js/menu-jquery.js',
@@ -241,10 +243,11 @@ gulp.task('js', function() {
 		]);
 		return gulp.src(jsSources.in)
 			.pipe(deporder())
-			.pipe(concat(jsSources.filename))
+			.pipe(browserify())
+			// .pipe(concat(jsSources.filename))
 			.pipe(size({ title: 'JS in '}))
 			// .pipe(stripdebug())
-			// .pipe(uglify())
+			.pipe(uglify())
 			.pipe(size({ title: 'JS out '}))
 			.pipe(gulp.dest(jsSources.out));
 	}
