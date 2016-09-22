@@ -7,7 +7,7 @@
 			else{
 				$.each(arr,function(i,item){
 					if(arr[i].title.toLowerCase().indexOf(searchQuery) > -1){
-						searchResult += '<a href="placesofinterestdetail.html?pid=' + arr[i].placeid +'" style="text-decoration:none;">\
+						searchResult += '<a href=' + pathname + 'detail.html?pid=' + arr[i].placeid + ' style="text-decoration:none;">\
 						<div id="placeblocks">\
 							<div style="background-color:rgba(250, 250, 250, 1.0);">\
 								<div class="text">\
