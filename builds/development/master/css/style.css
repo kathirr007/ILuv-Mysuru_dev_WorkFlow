@@ -4,10 +4,11 @@
 @import url('searchbox.css');
 @import url('map.css');
 @import url('form-register.css');
+@import url('contact-buttons.css');
 
 /* GLOBAL */
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Abel', sans-serif;
 	color: #000000;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
@@ -62,22 +63,48 @@ a {
 	float: left;
 }
 
+#heading span{font-family: 'Abel', sans-serif !important;}
+
+
+
+.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 span {
+    color: #b65c39 !important;
+}
+.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 span {
+    color: #c647bb !important;
+}
+.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 span {
+    color: #27aef5 !important;
+}
+.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 span {
+    color: #085ac0 !important;
+}
+.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 span {
+    color: #448802 !important;
+}
+.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 span {
+    color: #fbaa20 !important;
+}
+
+
+
+
 .iconText {
 	text-align:center;
 	}
 
 .bottommenu
 {
-	height: 50px !important;
+	height: 40px !important;
 	position:fixed;
-	background-color:#282828;
+	background-color:#000000;
 	z-index:10000000000 !important;
 	width:100%;
 	bottom:0px;
 }
 
 #bm_ul {width:100% !important;}
-#bm_ul li {float:left !important; width:33% !important; text-align:center !important; padding-top:5px !important;}
+#bm_ul li {float:left !important; width:33% !important; text-align:center !important; padding-top:10px !important;}
 
 .full {
 	width:100% !important;
@@ -334,3 +361,13 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 .jssora22r.jssora22rdn {
 	background-position: -310px -31px;
 }
+
+#id05 {width:100%; margin:0px auto;}
+#id05 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#id05 li {float: none; padding-left:20px;}
+#id05 span{color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;}
