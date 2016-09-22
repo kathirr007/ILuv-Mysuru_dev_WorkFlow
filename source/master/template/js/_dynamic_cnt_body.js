@@ -67,8 +67,10 @@ out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
 out3 += "</div>";
 maps += "</div>";
  
-var lati = arr[idx].lati.substr(0, 7);
-var longi = arr[idx].longi.substr(0, 7);
+var lati = arr[idx].lati,
+	longi = arr[idx].longi;
+ 	lati = lati ? arr[idx].longi.substr(0,7) : "N/A",
+ 	longi = longi ? arr[idx].longi.substr(0,7) : "N/A" ;
 console.log ("selected page Latitude is " + lati + " & Longitude is " + longi);
 
 var center = new google.maps.LatLng(lati, longi);
