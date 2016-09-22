@@ -148,7 +148,9 @@ height:auto !important;
 width:60% !important;
 height:auto !important;
 }
-
+.hide {
+	display:none;
+}
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -167,7 +169,7 @@ ul {
 	background-color:rgba(255, 255, 255,0) !important;	
 	}*/
 #tabs #id03 {
-	padding: 10px;
+	padding: 10px 10px 50px;
 }	
 div#id04 div#details > div {
 	padding:10px !important;

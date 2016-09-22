@@ -12,9 +12,16 @@
 <!--<link href="master/css/media.css" rel="stylesheet">
 <script type="text/javascript" src="cordova.js"></script>-->
 <script type="text/javascript" src="index.js"></script>
+<!-- <script src="master/js/jquery-ui.min.js"></script> -->
+<script src="master/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
+<!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
+<script type="text/javascript" src="master/js/carousel.js"></script> 
 <script src="master/js/menu-jquery.js"></script>
 <script src="master/js/menu-jquery1.js"></script> 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqGeQYbKFe5SHRmLYypFG3Ctwtct0GzsQ&v=3.20&sensor=false"></script>
+
+
 <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
@@ -104,45 +111,9 @@
 <!--container-->
 <div class="container">
   <div class="main clearfix" >
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;"> 
-          <!-- Loading Screen --> 
-          <!--<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-            </div>-->
-          <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"> 
-            <!--
-                <div data-p="225.00" style="display: none;">
-                    <img data-u="image" src="img/red.jpg" />
-                    <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">TOUCH SWIPE SLIDER</div>
-                    <div style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
-                    <div data-u="caption" data-t="0" style="position: absolute; top: 100px; left: 600px; width: 445px; height: 300px;">
-                        <img style="position: absolute; top: 0px; left: 0px; width: 445px; height: 300px;" src="img/c-phone.png" />
-                        <img data-u="caption" data-t="1" style="position: absolute; top: 70px; left: 130px; width: 102px; height: 78px;" src="img/c-jssor-slider.png" />
-                        <img data-u="caption" data-t="2" style="position: absolute; top: 153px; left: 163px; width: 80px; height: 53px;" src="img/c-text.png" />
-                        <img data-u="caption" data-t="3" style="position: absolute; top: 60px; left: 220px; width: 140px; height: 90px;" src="img/c-fruit.png" />
-                        <img data-u="caption" data-t="4" style="position: absolute; top: -123px; left: 121px; width: 200px; height: 155px;" src="img/c-navigator.png" />
-                    </div>
-                    <div data-u="caption" data-t="5" style="position: absolute; top: 120px; left: 650px; width: 470px; height: 220px;">
-                        <img style="position: absolute; top: 0px; left: 0px; width: 470px; height: 220px;" src="img/c-phone-horizontal.png" />
-                        <div style="position: absolute; top: 4px; left: 45px; width: 379px; height: 213px; overflow: hidden;">
-                            <img data-u="caption" data-t="6" style="position: absolute; top: 0px; left: 0px; width: 379px; height: 213px;" src="img/c-slide-1.jpg" />
-                            <img data-u="caption" data-t="7" style="position: absolute; top: 0px; left: 379px; width: 379px; height: 213px;" src="img/c-slide-3.jpg" />
-                        </div>
-                       
-                    </div>
-                </div>-->
-            <div data-p="225.00" style="display: none;"> <img data-u="image" src="master/images/flicker-4.jpg" /> </div>
-            <div data-p="225.00" data-po="80% 55%" style="display: none;"> <img data-u="image" src="master/images/flicker-5.jpg" /> </div>
-            <div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg" /></a> </div>
-            <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a> </div>
-          <!-- Bullet Navigator -->
-          <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1"> 
-            <!-- bullet navigator item prototype -->
-            <div data-u="prototype" style="width:16px;height:16px;"></div>
-          </div>
-          <!-- Arrow Navigator --> 
-          <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> </div>
+    	<section id="slider-content">
+    		
+    	</section>
     <div class="clear"></div>
     <div id="placeblocks">
       <div style="background-color:rgba(250, 250, 250, 1.0);">
@@ -183,61 +154,14 @@
 </div>
 </div>
 </div>
-<script src="master/js/jquery-ui.js"></script> 
 <script>
 
 var xmlhttp = new XMLHttpRequest(),
-	pages = [
-				
-				["placesofinterest","placesofinterestdetail","placesInterest"],
-				["history","historydetail","historygeography"],
-				["finedine","finedinedetail","dineRestaurants"],
-				["hotelslodging","hotelslodgingdetail","hotelsLodging"],
-				["lifestyle","lifestyledetail","lifestyleFashion"],
-				
-				["upcomingevents","upcomingeventsdetail","upcomingEvents"]
-			],
-	url,
-	url_link,
- 	pathname = location.pathname.split("/")[1].split(".")[0],
-	pathPid = location.href.slice(-16);
-// 		if (location.pathname.includes("detail")){
-// pathname = pathname.split("detail")[0];}	
-// 	url = "master/json/" + pathname + ".json";
-
-// function getJson (){
-// 	var pathname = location.pathname.split("/")[1].split(".")[0];
-// 	if (location.pathname.includes("detail")){
-// pathname = pathname.split("detail")[0];
-// }
-// }
-// 	url = getUrl(pathname, pages);
-
-function getUrl (pathname, pages){
-// return function(pathname){
-	for(i=0; i<pages.length; i++){
-//    var pathname = location.pathname.split("/")[1].split(".")[0];
-   if (pathname.includes(pages[i][0] || pages[i][1])){
-   	return  function(){
-       url = "master/json/" + pages[i][2] + ".json";
-       url_link = pages[i][1] + ".html?pid=";   		
-   	};
-   }
- }
-// };
-
-}
-
-var url = getUrl(pathname, pages);
-url();
-// var xmlhttp = new XMLHttpRequest();
-// var url = "master/json/dineRestaurants.json";
-
-
-console.log(url);
-console.log(url_link);
-console.log(pathname);
-
+	path = location.pathname.split(".")[0].split("/").pop(),
+	pathname = path.includes("detail") ? path.split("detail")[0] : path,
+	pathPid = location.href.slice(-16),
+	url = "master/json/" + pathname + ".json";
+console.log(pathname);console.log(pathPid);console.log(url);
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		myFunction(xmlhttp.responseText);
@@ -247,143 +171,71 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function myFunction(response) {
-
 var arr = JSON.parse(response),
-	i,
-	out = "<div>",
-	out2 = "<div>",
-	out3 = "<div id=\"details\">", 
-	maps = "<div id=\"map-canvas\">";
-	
-
-// var pid = function (pathPid, arr){
-// for(i=0; i<arr.length; i++){
-// 	var pid;
-//    if (arr[i].placeid === pid){
-//    	return function(){
-//        pid = arr[i].placeid;
-//    	};
-//    }
-//  }		
-// };
-// 
-// pid(pathPid, arr);
-
-console.log(pathPid);
-
+	i, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
 
 for(i = 0; i < arr.length; i++) {
 var gall = arr[i].galleries,
 	thumbImage;
-
-// function keysToLowerCase(arr){
-//     Object.keys(arr).forEach(function (key) {
-//         var k = key.toLowerCase();
-
-//         if (k !== key) {
-//             arr[k] = arr[key];
-//             delete arr[key];
-//         }
-//     });
-//     return (arr);
-// }
-// console.log(arr);
-
-// console.log(gall);
-
 	if (gall.length === 0) {
 	thumbImage = "master/images/noimg.png"; }
 	else {
 	thumbImage = encodeURI(arr[i].galleries[0].img_name);
 	}
     out += "<a href=" + pathname + "detail.html?pid=" + arr[i].placeid + " style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
-    
     out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span><div style=\"color:#000; padding-top:15px;\"><ul style=\"float:left;\"><li><img src=\"master\/images\/adventure.png\"></li><li style=\"padding-left:15px;\"><img src=\"master\/images\/rating.png\"></li><li><span style=\"color:#989999; font-family: 'Abel', sans-serif; padding-left:15px;\">7.5 kms</span></li></ul></div></li>";
-    
     out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
     out += "</div>";
 }
 console.log(arr);
-
 $.each(arr,function(idx){
 if(arr[idx].placeid == pathPid) {
-// test = $('<div/>').html(arr[idx].details).text();
-// test2 = $('<div/>').html(test).text()
+var sliderImagesList = arr[idx].galleries;
+console.log(sliderImagesList);
+function buildSlider(sliderImagesList){
+	var sliderContent = '';
+	sliderContent += '<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">\
+		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">';
+	sliderImagesList.forEach(function(item){
+		var img_name = encodeURI(item.img_name);
+console.log(img_name);
+		sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="'+item.img_name+'"/></div>';
+	});
+		sliderContent += '<div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg"/></a></div> \
+		</div>\
+		  <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">\
+			<div data-u="prototype" style="width:16px;height:16px;"></div>\
+		  </div>\
+		  <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> \
+		  <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> \
+		</div>';
+console.log(sliderContent);		
+	$("#slider-content").append(sliderContent);
+}	
+	buildSlider(sliderImagesList);
+	jssor_1_slider_init();
+	
 out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
 out2 += "</div>";
 out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
 out3 += "</div>";
 maps += "</div>";
  
-var lati = arr[idx].lati.substr(0, 8);
-var longi = arr[idx].longi.substr(0, 8);
+var lati = arr[idx].lati.substr(0, 7);
+var longi = arr[idx].longi.substr(0, 7);
 console.log ("selected page Latitude is " + lati + " & Longitude is " + longi);
 
 var center = new google.maps.LatLng(lati, longi);
 var factory = new google.maps.LatLng(lati, longi);
 
 function initialize() {
-	
-  var mapOptions = {
-    center: center,
-    zoom: 16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  var mapOptions = {center: center, zoom: 16, mapTypeId: google.maps.MapTypeId.ROADMAP};
   var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-  /*var content = '<div id="iw-container">' +
-                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
-                    '<div class="iw-content">' +
-                      '<div class="iw-subTitle">History</div>' +
-                      '<img src="images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
-                      '<div class="iw-subTitle">Contacts</div>' +
-                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
-                    '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';
-  var infowindow = new google.maps.InfoWindow({
-    content: content,
-    maxWidth: 350
-  });*/
-   
   // marker options
-  var marker = new google.maps.Marker({
-    position: factory,
-    map: map,
- title: arr[idx].title 
-  });
-  /*google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });
-
-  google.maps.event.addListener(map, 'click', function() {
-    infowindow.close();
-  });
-
-  google.maps.event.addListener(infowindow, 'domready', function() {
-    var iwOuter = $('.gm-style-iw');
-    var iwBackground = iwOuter.prev();
-    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-    iwOuter.parent().parent().css({left: '115px'});
-    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
-    var iwCloseBtn = iwOuter.next();
-    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
-    if($('.iw-content').height() < 140){
-      $('.iw-bottom-gradient').css({display: 'none'});
-    }
-    iwCloseBtn.mouseout(function(){
-      $(this).css({opacity: '1'});
-    });
-  });*/
+  var marker = new google.maps.Marker({position: factory, map: map, title: arr[idx].title});
 }
-}
-
 google.maps.event.addDomListener(window, 'load', initialize);
-
+}
 });
 document.getElementById("id02").innerHTML = out2;
 document.getElementById("id03").innerHTML = maps;
@@ -397,7 +249,6 @@ document.getElementById("id04").innerHTML = out3;
 //    $( "#tabs" ).tabs();
 //  } );
 </script> 
-<script src="master/js/jquery-1.12.4.js"></script> 
 <script type="text/javascript" >
   $(document).ready(function(){
       $("#mapToggle").click(function(){
@@ -408,11 +259,6 @@ document.getElementById("id04").innerHTML = out3;
   });
 </script>
 
-<script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
-<!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
-<script type="text/javascript" src="master/js/carousel.js"></script> 
-<script type="text/javascript">
-	jssor_1_slider_init();
-</script>
+
 </body>
 </html>

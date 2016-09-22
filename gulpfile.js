@@ -5,6 +5,7 @@ var
 	gulp = require('gulp'),
 	newer = require('gulp-newer'),
 	concat = require('gulp-concat'),
+	browserify = require('gulp-browserify'),
 	htmlclean = require('gulp-htmlclean'),
 	cleanCSS = require('gulp-clean-css'),
 	gulpif = require('gulp-if'),
@@ -112,7 +113,14 @@ if (devBuild==='development') {
 	};
 
 	jsSources = {
-		in: source + 'js/**/*',
+		in: [
+			 // source + 'js/jquery-ui.min.js',
+			 source + 'js/jquery-1.12.4.min.js',
+			 source + 'js/jssor.slider-21.1.5.min.js',
+			 source + 'js/carousel.js',
+			 source + 'js/menu-jquery.js',
+			 source + 'js/menu-jquery1.js'
+			],
 		out: dest + 'master/js/',
 		filename: 'main.js'
 	};
@@ -192,12 +200,21 @@ gulp.task('fonts', function() {
 // compile css
 
 gulp.task('css', function(){
-	gulp.src(cssSources.in)
+	var source = gulp.src(cssSources.in)
 	// .pipe(concat('style.css'))
-	.pipe(gulpif(devBuild==='production', cleanCSS()))
-	.pipe(gulp.dest(cssSources.out))
+	if(devBuild === "development") {
+		source.pipe(gulp.dest(cssSources.out))
+			  .pipe(browsersync.reload({ stream: true }));;
+	} else {
+		source.pipe(size({ title: 'CSS in' }))
+			  .pipe(cleanCSS({processImport:false}))
+			  .pipe(size({ title: 'CSS out' }))
+			  .pipe(gulp.dest(cssSources.out))
+			  .pipe(browsersync.reload({ stream: true }));
+	}
+	
 	// .pipe(connect.reload())
-	.pipe(browsersync.reload({ stream: true }));
+	// .pipe(browsersync.reload({ stream: true }));
 });
 
 // compile Sass
@@ -226,10 +243,11 @@ gulp.task('js', function() {
 		]);
 		return gulp.src(jsSources.in)
 			.pipe(deporder())
-			.pipe(concat(jsSources.filename))
+			.pipe(browserify())
+			// .pipe(concat(jsSources.filename))
 			.pipe(size({ title: 'JS in '}))
 			// .pipe(stripdebug())
-			// .pipe(uglify())
+			.pipe(uglify())
 			.pipe(size({ title: 'JS out '}))
 			.pipe(gulp.dest(jsSources.out));
 	}
