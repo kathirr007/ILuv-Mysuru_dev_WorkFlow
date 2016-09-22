@@ -3,6 +3,7 @@ var xmlhttp = new XMLHttpRequest(),
 	pathname = path.includes("detail") ? path.split("detail")[0] : path,
 	pathPid = location.href.slice(-16),
 	url = "master/json/" + pathname + ".json";
+	$('body').addClass(pathname);
 console.log(pathname);console.log(pathPid);console.log(url);
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
