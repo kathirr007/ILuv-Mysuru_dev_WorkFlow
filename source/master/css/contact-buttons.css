@@ -11,6 +11,7 @@
 
 #contact-buttons-bar.slide-on-scroll {
   position: absolute;
+  overflow:hidden;
 }
 
 .contact-button-link  {

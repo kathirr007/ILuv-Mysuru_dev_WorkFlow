@@ -118,6 +118,8 @@ if (devBuild==='development') {
 			 source + 'js/jquery-1.12.4.min.js',
 			 source + 'js/jssor.slider-21.1.5.min.js',
 			 source + 'js/carousel.js',
+			 source + 'js/jquery.contact-buttons.js',
+			 source + 'js/social_buttons.js',
 			 source + 'js/menu-jquery.js',
 			 source + 'js/menu-jquery1.js'
 			],
