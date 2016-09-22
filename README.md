@@ -14,7 +14,7 @@ Clone a copy of the repo:
 git clone https://github.com/kathirr007/ILuv-Mysuru_dev_WorkFlow.git
 ```
 
-Change to the Career Portal directory:
+Change to the Project directory:
 
 ```
 cd ILuv-Mysuru_dev_WorkFlow
