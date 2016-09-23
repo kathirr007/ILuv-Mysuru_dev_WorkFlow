@@ -64,6 +64,10 @@ a {
 
 #heading span{font-family: 'Abel', sans-serif !important;}
 
+div#preheader .jumbotron li:nth-of-type(2) img{
+    padding-right: 10px !important;
+	padding-top:15px !important;
+}
 
 
 .finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 span {
