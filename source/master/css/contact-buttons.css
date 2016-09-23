@@ -5,7 +5,7 @@
   width: 50px;
 }
 
- #contact-buttons-bar button:hover, #contact-buttons-bar button:focus, #contact-buttons-bar button:active {
+ #contact-buttons-bar button, #contact-buttons-bar button:hover, #contact-buttons-bar button:focus, #contact-buttons-bar button:active {
   right: -15px;
   }
 
@@ -26,7 +26,7 @@ font-size: 22px;
 background: #8e8e93;
 color: #fff;
 position: relative;
-right: -15px;
+right: -50px;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
@@ -44,7 +44,7 @@ a.contact-button-link.cb-ancor:active {
   right:0px;
 }
 .contact-button-link.cb-hidden {
-  right: -50px;
+  right: -15px;
 }
 .contact-button-link.facebook {
   background: #3b5998;
