@@ -14,7 +14,7 @@ console.log(pathname);console.log(pathPid);console.log(url);
 
 function myFunction(response) {
 var arr = JSON.parse(response),
-	i, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
+	i, ratingstar, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
 
 <!-- @include _listing_contents.js -->
 
@@ -24,9 +24,9 @@ if(arr[idx].placeid == pathPid) {
 var sliderImagesList = arr[idx].galleries,
 	nearestplace = arr[idx].nearestplace,
 	nearestplace = nearestplace ? arr[idx].nearestplace.split("\r\n") : [];
-console.log(sliderImagesList);
-console.log(nearestplace);
 
+
+console.log(nearestplace);
 
 
 <!-- @include _dynamic_slider.js -->

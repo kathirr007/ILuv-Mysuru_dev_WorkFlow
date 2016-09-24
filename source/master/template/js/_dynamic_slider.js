@@ -4,7 +4,6 @@ function buildSlider(sliderImagesList){
 		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">';
 	sliderImagesList.forEach(function(item){
 		var img_name = encodeURI(item.img_path);
-console.log(img_name);
 		sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="'+item.img_path+'"/></div>';
 	});
 		sliderContent += '<div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg"/></a></div> \
@@ -15,7 +14,7 @@ console.log(img_name);
 		  <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> \
 		  <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> \
 		</div>';
-console.log(sliderContent);		
+
 	$("#slider-content").append(sliderContent);
 }	
 	buildSlider(sliderImagesList);

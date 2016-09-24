@@ -10,12 +10,12 @@
 /* GLOBAL */
 body {
 	font-family: 'Abel', sans-serif;
-	color: #000000;
+	color: #222222;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 	-ms-text-size-adjust: none;
 	margin: 0px;
-	font-size:13px;
+	font-size:14px;
 	background-color:#0f2b50;
 }
 a {
@@ -72,22 +72,22 @@ div#preheader .jumbotron li:nth-of-type(2) img{
 }
 
 
-.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 span {
+.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2 {
     color: #b65c39 !important;
 }
-.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 span {
+.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2 {
     color: #c647bb !important;
 }
-.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 span {
+.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2 {
     color: #27aef5 !important;
 }
-.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 span {
+.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2 {
     color: #085ac0 !important;
 }
-.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 span {
+.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2 {
     color: #448802 !important;
 }
-.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 span {
+.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2 {
     color: #fbaa20 !important;
 }
 
@@ -215,6 +215,16 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	font-style: normal !important;
 	}
 
+#id05 {margin:0px 0px 15px 0px;}
+#id05 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#id05 div ul li {float: none; padding-left:20px; color:#222222; font-size:1.25em;}
+#id05 h2 {color:#448802; font-family: 'Abel', sans-serif; font-size:1.25em; font-weight:bold; padding:10px;}
+
 .toggle {
 	padding: 20px;
 }
@@ -279,6 +289,14 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
 #placeblocks li {float: left;}
 #placeblocks .img {width:80%;}
+#placeblocks ul li ul li:nth-of-type(2) {
+    background: url(../images/ratings_bg.png) no-repeat;
+    width: 68px;
+    height:16px;
+}
+#placeblocks ul li ul li:nth-of-type(2)::after{
+	content: "\00a0";
+}
 
 #placedetailbanner {width:auto; margin: 0px !important;overflow: hidden !important;}
 #box1 {
@@ -367,12 +385,3 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	background-position: -310px -31px;
 }
 
-#id05 {width:100%; margin:0px auto;}
-#id05 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-#id05 li {float: none; padding-left:20px;}
-#id05 span{color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;}
