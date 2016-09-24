@@ -1,12 +1,16 @@
 		$(document).on("keyup","input[name='q']",function(){
-			var searchQuery = $(this).val();
+			var searchValue = $(this).val(),
+				searchQuery = searchValue.toLowerCase();
+			console.log(searchQuery);
 			var searchResult = '';
 			if(searchQuery == ''){
 				$(".search-result").empty();
 			}
 			else{
 				$.each(arr,function(i,item){
-					if(arr[i].title.toLowerCase().indexOf(searchQuery) > -1){
+					var searchTitle = arr[i].title.toLowerCase();
+					console.log(searchTitle); 
+					if(searchTitle.indexOf(searchQuery) != -1){
 						searchResult += '<a href=' + pathname + 'detail.html?pid=' + arr[i].placeid + ' style="text-decoration:none;">\
 						<div id="placeblocks">\
 							<div style="background-color:rgba(250, 250, 250, 1.0);">\
@@ -26,6 +30,6 @@
 				if(searchResult == ''){
 					searchResult += '<p style="color:#FFFFFF;margin-left:5px;margin-bottom:30px;">No results found.</p>';
 				}
-				$(".search-result").empty().append('<h2 style="color:#FFFFFF;margin:10px 5px;">Search results related to the keyword "'+searchQuery+'"</h2>'+searchResult);
+				$(".search-result").empty().append('<h2 style="color:#FFFFFF;margin:10px 5px;">Search results related to the keyword "'+searchValue+'"</h2>'+searchResult);
 			}
 		});
