@@ -48,6 +48,8 @@ var devBuild,
 
 
 devBuild = process.env.NODE_ENV || 'development';
+	// path = window.location.pathname.split(".")[0].split("/").pop(),
+	// pathname = path.includes("detail") ? path.split("detail")[0] : path;
 
 if (devBuild==='development') {
   dest = 'builds/development/';
@@ -155,6 +157,11 @@ gulp.task('clean', function() {
 		dest + '*'
 	]);
 });
+
+// gulp.task('filename', function(){
+// 	console.log(__filename);
+	
+// });
 
 // load datas
 gulp.task('mainjs', function() {
