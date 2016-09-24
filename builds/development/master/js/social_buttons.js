@@ -43,7 +43,7 @@
       oContainer.addClass(settings.effect);
       
       // Add show/hide button
-      var sShowHideBtn = '<button class="contact-button-link show-hide-contact-bar"><i class="fa fa-angle-left"></i></button>';
+      var sShowHideBtn = '<button class="contact-button-link show-hide-contact-bar"><i class="fa fa-share-alt-square"></i></button>';
       oContainer.append(sShowHideBtn);
       
       var i;
@@ -82,7 +82,7 @@
       $('body').on('click', '.show-hide-contact-bar', function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        $('.show-hide-contact-bar').find('.fa').toggleClass('fa-share-alt-square');
+        $('.show-hide-contact-bar').find('.fa').toggleClass('fa-angle-right fa-share-alt-square');
         oContainer.find('.cb-ancor').toggleClass('cb-hidden');
       });
     }
