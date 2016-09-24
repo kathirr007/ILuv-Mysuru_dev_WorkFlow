@@ -1,0 +1,389 @@
+@import url('splash.css');
+@import url('menu.css');
+@import url('font-awesome.min.css');
+@import url('searchbox.css');
+@import url('map.css');
+@import url('form-register.css');
+@import url('contact-buttons.css');
+@import url('preloader.css');
+
+/* GLOBAL */
+body {
+	font-family: 'Abel', sans-serif;
+	color: #222222;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-ms-text-size-adjust: none;
+	margin: 0px;
+	font-size:14px;
+	background-color:#0f2b50;
+}
+a {
+	outline: none !important;
+}
+
+.container {
+	width: 100%;
+	margin-top: 51px;
+}
+.main {
+	width: 100%;
+	margin: auto;
+}
+.clear {
+	clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+* {
+	margin: 0px;
+}
+.main_menu_bg, body.details {
+	background-color:#0f2b50;
+}
+.icon_title {
+	text-align: center !important;
+	color: #fff;
+	width: 100%;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 10px 0px 10px 0px;
+	float: left;
+}
+
+#heading span{font-family: 'Abel', sans-serif !important;}
+
+div#preheader .jumbotron li:nth-of-type(2) a{
+    padding-right: 10px !important;
+	padding-top:12px !important;
+	display:inline-block;
+	font-size:1.5em;
+}
+
+
+.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2 {
+    color: #b65c39 !important;
+}
+.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2 {
+    color: #c647bb !important;
+}
+.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2 {
+    color: #27aef5 !important;
+}
+.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2 {
+    color: #085ac0 !important;
+}
+.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2 {
+    color: #448802 !important;
+}
+.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2 {
+    color: #fbaa20 !important;
+}
+
+
+
+
+.iconText {
+	text-align:center;
+	}
+
+.bottommenu
+{
+	height: 40px !important;
+	position:fixed;
+	background-color:#000000;
+	z-index:10000000000 !important;
+	width:100%;
+	bottom:0px;
+}
+
+#bm_ul {width:100% !important;}
+#bm_ul li {float:left !important; width:33% !important; text-align:center !important; padding-top:10px !important;}
+
+.full {
+	width:100% !important;
+	}
+.tableWrap {
+    overflow-x: hidden;
+}
+.tableBlock {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px;
+    /*margin: 0 -15px;*/
+}
+.tableWrap > .tableBlock {
+	border-spacing:5px;
+}
+.tableWrap > .tableBlock {
+	margin-bottom:-5px;
+}
+.mlft10 {
+	margin-left:10px !important;
+}
+.mb10 {
+	margin-bottom:10px !important;
+}
+.tableRow {
+    display: table-row;
+}
+.tableCell, .tableCell2 {
+    display: table-cell;
+    padding: 10px;
+/*    border: 1px solid red;*/
+	vertical-align:middle;
+	text-align:center;
+	font-family: 'Abel', sans-serif;
+	font-size:16px;
+	color:#000;
+}
+.tableCell a, .tableCell2 a {
+	color:#ffffff;
+	}
+.tableCell {
+    width: 40%;
+}
+.tableCell2 {
+    width: 60%;
+}
+.nopad {
+	padding:0px;
+}
+.noborder {
+	border:none !important;	
+}
+.noborderspacing {
+	border-spacing:0px !important;
+}
+.img50 {
+	width:50% !important;
+	height:auto !important;
+	}
+	
+.img70 {
+width:70% !important;
+height:auto !important;
+}
+
+.img60 {
+width:60% !important;
+height:auto !important;
+}
+.hide {
+	display:none;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+/*li {
+	float: left;
+}*/
+/*div#id03 div#details p, div#id03 div#details div {
+	color:red !important; 
+	font-family: 'Abel', sans-serif !important;
+	font-size:16px !important; 
+	text-align: justify !important; 
+	padding:10px !important;
+	background-color:rgba(255, 255, 255,0) !important;	
+	}*/
+#tabs #id03 {
+	padding: 10px 10px 50px;
+}	
+div#id04 div#details > div {
+	padding:10px !important;
+	}	
+div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span {
+	color:#222222 !important; 
+	font-family: 'Abel', sans-serif !important;
+	font-size:16px !important; 
+	text-align: justify !important; 
+	background-color:rgba(255, 255, 255,0) !important;
+	font-style: normal !important;
+	}
+
+#id05 {margin:0px 0px 15px 0px;}
+#id05 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#id05 div ul li {float: none; padding-left:20px; color:#222222; font-size:1.25em;}
+#id05 h2 {color:#448802; font-family: 'Abel', sans-serif; font-size:1.25em; font-weight:bold; padding:10px;}
+
+.toggle {
+	padding: 20px;
+}
+.title {
+	color: #ffffff;
+	font-size: 50px;
+	padding-top: 14px;
+	padding-left: 30px;
+}
+.clear {
+	clear: both;
+}
+
+.logo
+{
+	height: 50px !important;
+	position:fixed;
+	background-color:#000000;
+	z-index:10000000000 !important;
+	width:100%;
+	top:0px;
+}
+
+#menublocks {margin: 7px; overflow: hidden !important;}
+#menublocks .wid40 {width:38%; float:left; text-align:center; height: 100% !important;padding-bottom: 10em !important;margin-bottom: -10em;}
+#menublocks .wid60 {width:60%; float:right; text-align:center; height: 100% !important;padding-bottom: 10em !important;margin-bottom: -10em;}
+.images40 {width:39.5% !important; height:auto !important;}
+.images60 {width:25% !important; height:auto !important;}
+
+#menublocks2 {margin: 7px 7px !important;overflow: hidden !important;}
+#menublocks2 .wid60 {width:38%; float:right; text-align:center;}
+#menublocks2 .wid40 {width:60%; float:left; text-align:center;height: 100% !important;padding-bottom: 10em !important;margin-bottom: -10em;}
+#menublocks2.images60 {width:39.5% !important; height:auto !important;}
+#menublocks2.images40 {width:25% !important; height:auto !important;}
+
+#menublocks3 {margin: 7px 7px 10px 7px !important; overflow: hidden !important;}
+#menublocks3 .wid40 {width:38%; float:left; text-align:center; height: 100% !important;padding-bottom: 10em !important;margin-bottom: -10em;}
+#menublocks3 .wid60 {width:60%; float:right; text-align:center; height: 100% !important;padding-bottom: 10em !important;margin-bottom: -10em;}
+.images40 {width:39.5% !important; height:auto !important;}
+.images60 {width:25% !important; height:auto !important;}
+
+#rightblocks {width:auto !important; margin:0 auto;/*! float: right; */padding-bottom: 10em;margin-bottom: -10em;}
+#rightblocks ul {list-style-type: none;margin: 0; padding: 0; width:38%; text-align:center; float:right;}
+#rightblocks .wid60 {width:60%; float:right; text-align:center;}
+
+/*#menublocks3 {margin: 0px 7px 10px 7px !important;}
+#menublocks3 ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
+#menublocks3 li {float: left;}
+#menublocks3 .wid60 {width:60%; text-align:center;}
+#menublocks3 .wid40 {width:38%;  text-align:center;}
+#menublocks3.images60 {width:39.5% !important; height:auto !important;}
+#menublocks3.images40 {width:25% !important; height:auto !important;}*/
+
+#blocks { width:auto; margin: -3px 7px 7px 7px !important;overflow: hidden !important;}
+#blocks .text {font-size: inherit; color: #ffffff; padding:12px;}
+
+#heading {width:auto; margin: 7px 7px 0px 7px !important;overflow: hidden !important;}
+
+#placeblocks { width:auto; margin: 1px !important;overflow: hidden !important;}
+#placeblocks .text {font-size: inherit; color: #ffffff; padding:12px;}
+#placeblocks .detailblock {font-size: inherit; color: #ffffff; padding:10px 0px;}
+#placeblocks ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
+#placeblocks li {float: left;}
+#placeblocks .img {width:80%;}
+#placeblocks ul li ul li:nth-of-type(2) {
+    background: url(../images/ratings_bg.png) no-repeat;
+    width: 68px;
+    height:16px;
+}
+#placeblocks ul li ul li:nth-of-type(2)::after{
+	content: "\00a0";
+}
+
+#placedetailbanner {width:auto; margin: 0px !important;overflow: hidden !important;}
+#box1 {
+	/* width: 98%; */
+	margin: auto;
+	opacity: 0.9;
+}
+.iconText { font-size: inherit; color: #ffffff; padding:35px 0px;}
+.searchoutline{outline:none !important;}
+
+/* Toggle Map styles*/
+#mapToggle {
+ border-radius:5px;
+ background-color:#989999;
+ color:#fff;
+ padding:10px;
+ cursor:pointer;
+ width: 97%;
+ margin: 0 auto;
+ box-sizing: border-box;
+ }
+#mapToggle i {
+ float:right;
+ } 
+/* Toggle Map styles ends*/
+
+.jssorb05 {
+	position: absolute;
+}
+.jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+	position: absolute;
+	/* size of bullet elment */
+	width: 16px;
+	height: 16px;
+	background: url('../images/b05.png') no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+.jssorb05 div {
+	background-position: -7px -7px;
+}
+.jssorb05 div:hover, .jssorb05 .av:hover {
+	background-position: -37px -7px;
+}
+.jssorb05 .av {
+	background-position: -67px -7px;
+}
+.jssorb05 .dn, .jssorb05 .dn:hover {
+	background-position: -97px -7px;
+}
+/* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+.jssora22l, .jssora22r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+	width: 40px;
+	height: 58px;
+	cursor: pointer;
+	background: url('../images/a22.png') center center no-repeat;
+	overflow: hidden;
+}
+.jssora22l {
+	background-position: -10px -31px;
+}
+.jssora22r {
+	background-position: -70px -31px;
+}
+.jssora22l:hover {
+	background-position: -130px -31px;
+}
+.jssora22r:hover {
+	background-position: -190px -31px;
+}
+.jssora22l.jssora22ldn {
+	background-position: -250px -31px;
+}
+.jssora22r.jssora22rdn {
+	background-position: -310px -31px;
+}
+

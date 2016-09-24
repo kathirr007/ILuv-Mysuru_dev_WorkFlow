@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ILuv Mysuru</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>ILuv Mysuru | Main</title>
+<link href="master/css/style.css" rel="stylesheet">
+<!--<link href="master/css/media.css" rel="stylesheet">-->
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
+<!-- <script type="text/javascript" src="cordova.js"></script> -->
+<script type="text/javascript" src="index.js"></script>
+<!-- <script src="master/js/jquery-ui.min.js"></script> -->
+<script src="master/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
+<!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
+<script type="text/javascript" src="master/js/carousel.js"></script>
+<script src="master/js/menu-jquery.js"></script>
+<script src="master/js/menu-jquery1.js"></script> 
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqGeQYbKFe5SHRmLYypFG3Ctwtct0GzsQ&v=3.20&sensor=false"></script>
+
+
+  
+<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+<div class="logo">
+<div class="menu"> 
+    
+    <!-- Menu icon -->
+    
+    <div class="icon-close"> <i class="fa fa-close"></i> <a style="font-family: 'Abel', sans-serif;">CLOSE</a></div>
+    
+    <!-- Menu -->
+    
+    <ul>
+      <a href="main.html">
+      <li class="menuli">
+        <div><img src="master/images/home.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Home</div>
+      </li>
+      </a> <a href="placesofinterest.html">
+      <li class="menuli">
+        <div><img src="master/images/poi.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Places of Interest</div>
+      </li>
+      </a> <a href="hotelslodging.html">
+      <li class="menuli">
+        <div><img src="master/images/hotlod.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Hotels & Lodging</div>
+      </li>
+      </a> <a href="upcomingevents.html">
+      <li class="menuli">
+        <div><img src="master/images/events.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Upcoming Events</div>
+      </li>
+      </a> <a href="finedine.html">
+      <li class="menuli">
+        <div><img src="master/images/finedine.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Restaurants</div>
+      </li>
+      </a> <a href="lifestyle.html">
+      <li class="menuli">
+        <div><img src="master/images/lifestyle.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Lifestyle & Fashion</div>
+      </li>
+      </a> <a href="history.html">
+      <li class="menuli">
+        <div><img src="master/images/history.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
+      </li>
+      </a> <a href="#">
+      <li class="menuli">
+        <div><img src="master/images/contact.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Emergency Contacts</div>
+      </li>
+      </a><a href="help.html">
+      <li class="menuli">
+        <div><img src="master/images/help.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Help</div>
+      </li>
+      </a>
+      <div style="text-align:center; color:#ffffff; padding-top:10px;"><a href="http://www.theoreminc.net" style="text-decoration:none !important; font-size:10px; text-transform:none !important;">&copy; 2016 Theorem Inc - All Rights Reserved</a></div>
+    </ul>
+  </div>
+<div id="preheader">
+    <ul>
+      <div class="jumbotron">
+        <li style="width:55%;">
+          <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
+        </li>
+        <li style="width:43%; text-align:right; padding-top:12px;">
+          <form method="get" action="/search" id="search">
+            <input name="q" type="text" size="20" placeholder="Search..." style="outline:none;" class="searchoutline"/>
+          </form>
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Menu End --> <!--Logo--> 
+</div>
+<div class="clear"></div>
+<!--container-->
+<div class="container">
+    <div class="main clearfix">
+  <div class="search-result"></div>
+    <div id="heading" class="clearfix"> <span style="font-size:16px; color:#ffffff; line-height:30px; font-family: 'Courgette', cursive;">History & Geography</span> </div>
+    <div class="clear"></div>
+    <div id="id01"></div>
+    <script>
+var xmlhttp = new XMLHttpRequest(),
+	path = location.pathname.split(".")[0].split("/").pop(),
+	pathname = path.includes("detail") ? path.split("detail")[0] : path,
+	pathPid = location.href.slice(-16),
+	url = "master/json/" + pathname + ".json";
+
+// custom styles
+	$('body').addClass(pathname);
+	$('a[href="#id02"]').click(function(){$('.detailblock').css({"padding":"50px 0px 0px 0px !important;"})});
+
+console.log(pathname);console.log(pathPid);console.log(url);
+
+xmlhttp.onreadystatechange=function() {
+	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		myFunction(xmlhttp.responseText);
+	}
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+var arr = JSON.parse(response),
+	i, ratingstar, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
+
+for(i = 0; i < arr.length; i++) {
+var gall = arr[i].galleries,
+	thumbImage;
+	ratingstars = arr[i].ratingstar;
+	
+	
+function getstars(ratingstars){
+	ratingstar = "";
+		for (j=0; j < ratingstars; j++) {
+			ratingstar += '<img src="master/images/ratingstar.png" alt="" />';
+		}
+	return ratingstar;
+	};
+	
+// var actualRating = getstars(ratingstars);
+		
+
+
+	
+console.log(ratingstar);
+	if (gall.length === 0) {
+	thumbImage = "master/images/noimg.png"; }
+	else {
+	thumbImage = encodeURI(arr[i].galleries[0].img_path);
+	}
+    out += "<a href=" + pathname + "detail.html?pid=" + arr[i].placeid + " style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
+    out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span><div style=\"color:#000; padding-top:15px;\"><ul style=\"float:left;\"><li><img src=\"master\/images\/adventure.png\"></li><li style=\"padding-left:15px;\">"+getstars(ratingstars)+"</li></ul></div></li>";
+    out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
+    out += "</div>";
+}
+
+
+		// for(i=0; i < ratingstars; i++) {
+		// 	ratingstar += '<img src="master/images/ratingstar.png" alt="" />'
+		// }
+
+
+
+console.log(arr);
+$.each(arr,function(idx){
+if(arr[idx].placeid == pathPid) {
+var sliderImagesList = arr[idx].galleries,
+	nearestplace = arr[idx].nearestplace,
+	nearestplace = nearestplace ? arr[idx].nearestplace.split("\r\n") : [];
+
+
+console.log(nearestplace);
+
+
+function buildSlider(sliderImagesList){
+	var sliderContent = '';
+	sliderContent += '<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">\
+		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">';
+	sliderImagesList.forEach(function(item){
+		var img_name = encodeURI(item.img_path);
+		sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="'+item.img_path+'"/></div>';
+	});
+		sliderContent += '<div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="master/images/theorem.jpg"/></a></div> \
+		</div>\
+		  <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">\
+			<div data-u="prototype" style="width:16px;height:16px;"></div>\
+		  </div>\
+		  <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span> \
+		  <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span> \
+		</div>';
+
+	$("#slider-content").append(sliderContent);
+}	
+	buildSlider(sliderImagesList);
+	jssor_1_slider_init();
+	var nearestplaces = '';
+		nearestplaces += '<div><ul>';
+	nearestplace.forEach(function(item){
+		nearestplaces += '<li>' + item + '</li>';
+	});
+		nearestplaces += '</ul></div>'
+
+$(nearestplaces).insertAfter("#id05 h2");
+
+out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
+out2 += "</div>";
+out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
+out3 += "</div>";
+maps += "</div>";
+
+
+var lati = arr[idx].lati,
+	longi = arr[idx].longi;
+ 	lati = lati ? arr[idx].lati.substr(0,7) : "N/A",
+ 	longi = longi ? arr[idx].longi.substr(0,7) : "N/A" ;
+console.log ("selected page Latitude is " + lati + " & Longitude is " + longi);
+
+var center = new google.maps.LatLng(lati, longi);
+var factory = new google.maps.LatLng(lati, longi);
+
+function initialize() {
+  var mapOptions = {center: center, zoom: 16, mapTypeId: google.maps.MapTypeId.ROADMAP};
+  var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+  // marker options
+  var marker = new google.maps.Marker({position: factory, map: map, title: arr[idx].title});
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+}
+});
+$(document).on("keyup","input[name='q']",function(){
+	var searchValue = $(this).val(),
+		searchQuery = searchValue.toLowerCase();
+	console.log(searchQuery);
+	var searchResult = '';
+	if(searchQuery == ''){
+		$(".search-result").empty();
+	}
+	else{
+		$.each(arr,function(i,item){
+			var searchTitle = arr[i].title.toLowerCase();
+			console.log(searchTitle);
+			if(searchTitle.indexOf(searchQuery) != -1){
+				searchResult += '<a href=' + pathname + 'detail.html?pid=' + arr[i].placeid + ' style="text-decoration:none;">\
+				<div id="placeblocks">\
+					<div style="background-color:rgba(250, 250, 250, 1.0);">\
+						<div class="text">\
+							<ul>\
+							<li style="width:40%;">\
+								<img src="' +arr[i].galleries[0].img_name+' " alt="" width="125" height="75" class="img" style="border:2px solid #d1cece;">\
+							</li>\
+							<li style="width:60%; line-height:18px;">\
+								<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
+								<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
+							</li>';
+				
+				searchResult += '</ul></div></div></div><div class="clear"></div><div class="clear"></div></a>';
+			}
+		});
+		if(searchResult == ''){
+			searchResult += '<p style="color:#FFFFFF;margin-left:5px;margin-bottom:30px;">No results found.</p>';
+		}
+		$(".search-result").empty().append('<h2 style="color:#FFFFFF;margin:10px 5px;">Search results related to the keyword "'+searchValue+'"</h2>'+searchResult);
+	}
+});
+if (path.includes("detail")) {
+document.getElementById("id02").innerHTML = out2;
+document.getElementById("id03").innerHTML = maps;
+document.getElementById("id04").innerHTML = out3;
+}
+else {
+document.getElementById("id01").innerHTML = out;
+}
+}
+
+
+
+
+        </script> 
+    
+    <!-- <ul>
+            
+            <li style="width:30%;"><a href="#"><img src="master/images/garden.jpg" alt="" width="125" class="img" style="border:2px solid #fff;"></a></li>
+            
+            <li style="width:60%; line-height:18px;"><span class="heading1"><a href="placesofinterestdetail.html" style="text-decoration:none; color:#e6e814;">Brindavan Gardens</a></span> <br>
+              <span class="address1">KRS Dam Road, Mysuru, <br>
+              Karnataka 571607<br>
+              <em>Mon Aug 08 2016 at 10:00 am</em></span></li>
+              
+            <li style="width:10%;"><a href="#"><img src="master/images/hotellocationicon.png" alt="" width="100%" class="image"></a></li>
+            
+          </ul>--> 
+    
+  </div>
+</div>
+</body>
+</html>
