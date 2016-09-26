@@ -239,28 +239,28 @@ gulp.task('css', function(){
 // });
 
 gulp.task('js', function() {
-	if (devBuild === "development") {
+	// if (devBuild === "development") {
 		return gulp.src(jsSources.in)
 			.pipe(newer(jsSources.out))
 			// .pipe(jshint())
 			// .pipe(jshint.reporter('default'))
 			// .pipe(jshint.reporter('fail'))
 			.pipe(gulp.dest(jsSources.out));
-	}
-	else {
-		del([
-			dest + 'js/*'
-		]);
-		return gulp.src(jsSources.in)
-			.pipe(deporder())
-			.pipe(browserify())
-			// .pipe(concat(jsSources.filename))
-			.pipe(size({ title: 'JS in '}))
-			// .pipe(stripdebug())
-			.pipe(uglify())
-			.pipe(size({ title: 'JS out '}))
-			.pipe(gulp.dest(jsSources.out));
-	}
+	// }
+	// else {
+	// 	del([
+	// 		dest + 'js/*'
+	// 	]);
+	// 	return gulp.src(jsSources.in)
+	// 		.pipe(deporder())
+	// 		.pipe(browserify())
+	// 		.pipe(concat(jsSources.filename))
+	// 		.pipe(size({ title: 'JS in '}))
+	// 		// .pipe(stripdebug())
+	// 		// .pipe(uglify())
+	// 		.pipe(size({ title: 'JS out '}))
+	// 		.pipe(gulp.dest(jsSources.out));
+	// }
 });
 
 gulp.task('json', function() {
@@ -277,7 +277,7 @@ gulp.task('json', function() {
 		]);
 		return gulp.src(jsonSources.in)
 			.pipe(deporder())
-			.pipe(concat(jsonSources.filename))
+			// .pipe(concat(jsonSources.filename))
 			.pipe(size({ title: 'JS in '}))
 			.pipe(stripdebug())
 			.pipe(jsonminify())
