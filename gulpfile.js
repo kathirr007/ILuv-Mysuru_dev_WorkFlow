@@ -118,6 +118,7 @@ if (devBuild==='development') {
 		in: [
 			 // source + 'js/jquery-ui.min.js',
 			 source + 'js/jquery-1.12.4.min.js',
+			 source + 'js/bootstrap.min.js',
 			 source + 'js/jssor.slider-21.1.5.min.js',
 			 source + 'js/carousel.js',
 			 source + 'js/jquery.contact-buttons.js',
