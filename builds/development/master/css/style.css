@@ -104,10 +104,6 @@ div#preheader .jumbotron li:nth-of-type(2) a{
     color: #fbaa20 !important;
 }
 
-body > div.container > div > div.search-result > h2 {
-	font-weight:normal;
-	color:#fff;
-}
 /* Collapsible pannel styles */
 .main-content{
 	margin:0 auto;
