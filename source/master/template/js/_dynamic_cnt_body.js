@@ -31,6 +31,25 @@ console.log(nearestplace);
 
 <!-- @include _dynamic_slider.js -->
 <!-- @include _nearestplaces.js -->
+$(function readmore(){
+var details = $('#id04 #details');	
+console.log(details);
+$(details).each(function(event){
+	var max_length = 150; 
+	if($(this).html().length > max_length){
+			var short_content 	= $(this).html().substr(0,max_length);
+			var long_content	= $(this).html().substr(max_length);
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+ 			$(this).find('a.read_more').click(function(event){ 
+				event.preventDefault(); 
+				$(this).hide();
+				$(this).parents('.item').find('.more_text').show();
+		 	});
+		}
+});
+});
 
 out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
 out2 += "</div>";
@@ -43,4 +62,23 @@ maps += "</div>";
 <!-- @include _listing_search.js -->
 <!-- @include _dynamic_cnt_insert.js -->
 
+// $(function(){
+// var details = $('#id04 #details').text();	
+// console.log(details);
+// $(details).each(function(event){
+// 	var max_length = 150; 
+// 	if($(this).html().length > max_length){
+// 			var short_content 	= $(this).html().substr(0,max_length);
+// 			var long_content	= $(this).html().substr(max_length);
+// 			$(this).html(short_content+
+// 						 '<a href="#" class="read_more"><br/>Read More</a>'+
+// 						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+//  			$(this).find('a.read_more').click(function(event){ 
+// 				event.preventDefault(); 
+// 				$(this).hide();
+// 				$(this).parents('.item').find('.more_text').show();
+// 		 	});
+// 		}
+// });
+// });
 

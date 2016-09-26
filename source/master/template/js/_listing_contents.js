@@ -13,11 +13,7 @@ function getstars(ratingstars){
 	};
 	
 // var actualRating = getstars(ratingstars);
-		
 
-
-	
-console.log(ratingstar);
 	if (gall.length === 0) {
 	thumbImage = "master/images/noimg.png"; }
 	else {
@@ -28,9 +24,4 @@ console.log(ratingstar);
     out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
     out += "</div>";
 }
-
-
-		// for(i=0; i < ratingstars; i++) {
-		// 	ratingstar += '<img src="master/images/ratingstar.png" alt="" />'
-		// }
 

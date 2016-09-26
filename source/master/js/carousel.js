@@ -35,9 +35,20 @@
             function ScaleSlider() {
                 var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
                 if (refSize) {
-                    refSize = Math.min(refSize, 1920);
-                    jssor_1_slider.$ScaleWidth(refSize);
-                }
+
+                    // var minHeight = 300;
+                    // var newWidth = refSize;
+                    // var newHeight = jssor_slider1.$OriginalHeight() / jssor_slider1.$OriginalWidth() * newWidth;
+
+                    // if (newHeight < minHeight){
+                    //     jssor_slider1.$ScaleHeight(minHeight);
+                    //   }
+                    // else{
+                    //     jssor_slider1.$ScaleWidth(parentWidth);
+                        refSize = Math.min(refSize, 1920);
+                        jssor_1_slider.$ScaleWidth(refSize); 
+                    }
+                
                 else {
                     window.setTimeout(ScaleSlider, 30);
                 }
@@ -47,4 +58,7 @@
             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             //responsive code end
+
+
+
         };
