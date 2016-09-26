@@ -27,7 +27,7 @@ a[href^="tel:"] {
 }
 
 a[href^="tel:"]:before {
-  content: "\260e";
+  content: "\f098";
   margin-right: 0.5em;
   color:#ffa500;
   font-family: FontAwesome;
@@ -156,7 +156,7 @@ body > div.my-container > div > div.search-result > h2 {
 #bm_ul {width:100% !important;}
 #bm_ul li {float:left !important; width:33.33333% !important; text-align:center !important; padding-top:10px !important;}
 #bm_ul li i {
-	font-size:1.25em;
+	font-size:1.5em;
 }
 .full {
 	width:100% !important;
