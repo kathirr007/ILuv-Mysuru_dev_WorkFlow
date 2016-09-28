@@ -253,10 +253,10 @@ ul {
 div#id04 div#details > div {
 	padding:10px !important;
 	}	
-div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span {
+div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span, #id05 div ul li {
 	color:#222222 !important; 
 	font-family: 'Abel', sans-serif !important;
-	font-size:16px !important; 
+	font-size:1.15em !important; 
 	text-align: justify !important; 
 	background-color:rgba(255, 255, 255,0) !important;
 	font-style: normal !important;
@@ -269,8 +269,8 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	padding: 0;
 	overflow: hidden;
 }
-#id05 div ul li {float: none; padding-left:20px; color:#222222; font-size:1.25em;}
-#id05 h2 {color:#448802; font-family: 'Abel', sans-serif; font-size:1.25em; font-weight:bold; padding:10px;}
+ 
+#id05 h2, #id02 > div:nth-child(1) > p:nth-child(1) {color:#448802; font-family: 'Abel', sans-serif; font-size:1.15em; font-weight:bold; padding:10px;}
 
 .toggle {
 	padding: 20px;
@@ -336,8 +336,8 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
 #placeblocks li {float: left;}
 #placeblocks .img {width:80%;}
-#placeblocks ul li ul li:nth-of-type(2) {
-    background: url(../images/ratings_bg.png) no-repeat;
+#placeblocks ul li ul li:nth-of-type(1) {
+    background: url(../images/ratings_bg.png) 0px 2px no-repeat;
     width: 68px;
     height:16px;
 }

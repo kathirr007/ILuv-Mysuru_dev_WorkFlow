@@ -11,7 +11,8 @@ $(document).on("keyup","input[name='q']",function(){
 			var searchTitle = arr[i].title.toLowerCase(),
 				gall = arr[i].galleries,
 				thumbImage;
-				ratingstars = arr[i].ratingstar;
+				ratingstars = arr[i].ratingstar,
+				kms = arr[i].nearkm;
 				
 console.log(searchTitle);
 
@@ -41,7 +42,7 @@ function getstars(ratingstars){
 											<li style="width:60%; line-height:18px;">\
 												<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
 												<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
-												<div style="color:#000; padding-top:15px;"><ul style="float:left;"><li><img src="master/images/adventure.png"></li><li style="padding-left:15px;">'+getstars(ratingstars)+'</li></ul></div>\
+												<div style="color:#000; padding-top:15px;"><ul style="float:left;"><li>'+getstars(ratingstars)+'</li><li>'+kms+'Kms from city</li></ul></div>\
 											</li>';
 				
 				searchResult += '</ul></div></div></div><div class="clear"></div><div class="clear"></div></a>';
