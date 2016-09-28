@@ -7,22 +7,23 @@
 <!-- @include template/_phonegap_script.html --> 
 
 <style type="text/css">
-/*#add {
-	width: 100%;
-	margin: 0 auto;
-}
-#add ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-#add li {
-	float: left;
-}*/
-/* testing styles */
-
-/* testing styles end */
+        .jssora07l, .jssora07r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background: url('img/a07.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora07l { background-position: -5px -35px; }
+        .jssora07r { background-position: -65px -35px; }
+        .jssora07l:hover { background-position: -125px -35px; }
+        .jssora07r:hover { background-position: -185px -35px; }
+        .jssora07l.jssora07ldn { background-position: -245px -35px; }
+        .jssora07r.jssora07rdn { background-position: -305px -35px; }
+        /* jssor slider thumbnail navigator skin 04 css *//*.jssort04 .p            (normal).jssort04 .p:hover      (normal mouseover).jssort04 .pav          (active).jssort04 .pav:hover    (active mouseover).jssort04 .pdn          (mousedown)*/.jssort04 .p {    position: absolute;    top: 0;    left: 0;    width: 62px;    height: 32px;}.jssort04 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort04 .w, .jssort04 .pav:hover .w {    position: absolute;    width: 60px;    height: 30px;    border: #0099FF 1px solid;    box-sizing: content-box;}.jssort04 .pdn .w, .jssort04 .pav .w {    border-style: dashed;}.jssort04 .c {    position: absolute;    top: 0;    left: 0;    width: 62px;    height: 32px;    background-color: #000;    filter: alpha(opacity=45);    opacity: .45;    transition: opacity .6s;    -moz-transition: opacity .6s;    -webkit-transition: opacity .6s;    -o-transition: opacity .6s;}.jssort04 .p:hover .c, .jssort04 .pav .c {    filter: alpha(opacity=0);    opacity: 0;}.jssort04 .p:hover .c {    transition: none;    -moz-transition: none;    -webkit-transition: none;    -o-transition: none;}* html .jssort04 .w {    width /**/: 62px;    height /**/: 32px;}
 </style>
 </head>
 
@@ -36,20 +37,37 @@
 <div class="clear"></div>
 <!--container-->
 <div class="my-container">
+    <div class="welcome-slider">
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:600px;height:240px;overflow:hidden;visibility:hidden;background:url('img/main_bg.jpg') 50% 50% no-repeat;">
+        <!-- Loading Screen -->
+
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height:240px; overflow: hidden;">
+          <div data-p="150" style="display: none;" class="tableWrap">
+                <div class="tableBlock full">
+                    <div class="tableRow">
+                        <div class="tableCell"><img src="master/images/dasaralogo.jpg" width="100%" height="auto" alt="Mysuru Dasara 2016" style="border:2px solid #cccccc;"/></div>
+                        <div class="tableCell2"><h1>Welcome to Mysuru Dasara 2016</h1>
+                                <p>Mysuru Dasara is the Nadahabba (State-Festival) of the state of Karnataka in South West India. <strong>OCT 02 - OCT 11</strong>.<br/><br/>The Dasara festivities have a very long and rich history of more than 400 years.</p></div>
+                    </div>
+                </div>
+          </div>
+          <div data-p="150" style="display: none;" class="tableWrap">
+                <div class="tableBlock full">
+                    <div class="tableRow">
+                        <div class="tableCell"><img src="master/images/dasaralogo.jpg" width="100%" height="auto" alt="Mysuru Dasara 2016" style="border:2px solid #cccccc;"/></div>
+                        <div class="tableCell2"><h1>Welcome to Mysuru Dasara 2016</h1>
+                                <p>Mysuru Dasara is the Nadahabba (State-Festival) of the state of Karnataka in South West India. <strong>OCT 02 - OCT 11</strong>.<br/><br/>The Dasara festivities have a very long and rich history of more than 400 years.</p></div>
+                    </div>
+                </div>
+          </div>
+<!--           <div data-u="navigator" class="jssorb05" style="bottom:16px;left:50%;" data-autocenter="1">
+			<div data-u="prototype" style="width:16px;height:16px;"></div>
+		  </div>           -->
+        </div>
+    </div>        
+    </div>
+
   <div class="tableWrap">
-  <div class="tableBlock full" >
-    	<div class="tableRow">
-            <div class="tableBlock full" style="background-color:rgba(250, 250, 250, 1.0);">
-            	<div class="tableCell" style="vertical-align:top;">
-		    		<img src="master/images/dasaralogo.jpg" width="100%" height="auto" alt="Mysuru Dasara 2016" style="border:2px solid #cccccc;"/>
-                </div>            	
-    			<div class="tableCell2" align="left" style="text-align:left; vertical-align:top;color:#000; font-family: 'Abel', sans-serif; font-size:14px; line-height:15px;">
-                    <strong>Welcome to Mysuru Dasara 2016</strong><br/><br/>
-            <span style="font-size:12px;">Mysuru Dasara is the Nadahabba (State-Festival) of the state of Karnataka in South West India. <strong>OCT 02 - OCT 11</strong>.<br/><br/>The Dasara festivities have a very long and rich history of more than 400 years.</span>
-                </div> 
-            </div>           
-    	</div>
- 	</div>
     <div class="tableBlock full">
     	<div class="tableRow">
                 <div class="tableCell" style="background-color:rgba(250, 250, 250, 1.0);">
@@ -156,5 +174,8 @@
     
   </div>
 </div>
+    <script type="text/javascript">
+    jssor_1_slider_init();
+    </script>
 </body>
 </html>

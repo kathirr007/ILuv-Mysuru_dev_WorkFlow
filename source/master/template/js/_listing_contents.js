@@ -2,7 +2,8 @@ for(i = 0; i < arr.length; i++) {
 var gall = arr[i].galleries,
 	thumbImage;
 	ratingstars = arr[i].ratingstar,
-	kms = arr[i].nearkm;
+	kms = arr[i].nearkm,
+	kms = kms ? kms : "- ";
 	
 	
 function getstars(ratingstars){

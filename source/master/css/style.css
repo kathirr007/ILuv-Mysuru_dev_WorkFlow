@@ -162,7 +162,7 @@ body > div.my-container > div > div.search-result > h2 {
 	width:100% !important;
 	}
 .tableWrap {
-    overflow-x: hidden;
+/*     overflow-x: hidden; */
 }
 .tableBlock {
     display: table;
@@ -256,7 +256,7 @@ div#id04 div#details > div {
 div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span, #id05 div ul li {
 	color:#222222 !important; 
 	font-family: 'Abel', sans-serif !important;
-	font-size:1.15em !important; 
+	font-size:16px !important; 
 	text-align: justify !important; 
 	background-color:rgba(255, 255, 255,0) !important;
 	font-style: normal !important;
@@ -270,7 +270,20 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	overflow: hidden;
 }
  
-#id05 h2, #id02 > div:nth-child(1) > p:nth-child(1) {color:#448802; font-family: 'Abel', sans-serif; font-size:1.15em; font-weight:bold; padding:10px;}
+#id05 h2, #id02 > div:nth-child(1) > p:nth-child(1) {
+	color:#448802; 
+	font-family: 'Abel', sans-serif; 
+	font-size:1.15em; 
+	font-weight:bold; 
+	padding:10px;
+}
+
+#id05 div ul li {
+    float: none;
+    padding-left: 20px;
+    color: #222222;
+    font-size: 1.25em;
+}
 
 .toggle {
 	padding: 20px;
@@ -338,7 +351,7 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks .img {width:80%;}
 #placeblocks ul li ul li:nth-of-type(1) {
     background: url(../images/ratings_bg.png) 0px 2px no-repeat;
-    width: 68px;
+    width: 53px;
     height:16px;
 }
 #placeblocks ul li ul li:nth-of-type(2)::after{
@@ -369,6 +382,31 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
  float:right;
  } 
 /* Toggle Map styles ends*/
+
+.welcome-slider {
+	width:98%;
+	margin:5px auto 0px;
+}
+.welcome-slider #jssor_1{
+	background:white;
+}
+.welcome-slider #jssor_1 > div > div > div:nth-child(2) > div.tableWrap > div.tableBlock.full {
+	background:white;
+}
+#jssor_1 > div > div > div:nth-child(2) > div.tableWrap > div.tableBlock.full {
+	border-spacing:0px;
+}
+.welcome-slider #jssor_1 div div div div div.tableBlock.full div div h1 {
+	font-size:1.5em !important;
+	font-weight:bold !important;
+	text-align:left;
+}
+.welcome-slider #jssor_1 div div div div div.tableBlock.full div div p {
+	font-size:1.15em !important;
+	text-align:left;
+}
+
+
 
 .jssorb05 {
 	position: absolute;
