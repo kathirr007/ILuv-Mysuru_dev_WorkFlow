@@ -30,10 +30,22 @@ body {
 }
 
 #preheader .my-jumbotron li:nth-of-type(2) a, .my-jumbotron li:nth-of-type(2) a:hover, .my-jumbotron li:nth-of-type(2) a:focus, .my-jumbotron li:nth-of-type(2) a:active {
-	font-size:1.5em;
+/*	font-size:1.5em;*/
 	color: #ffffff;
-	padding: 10px 10px 10px 0px;
+/*	padding: 10px 10px 10px 0px;*/
 	display:inline-block;
+}
+
+a.twitter {font-family:arial; font-size: 12px; background-color: #55acee; height: 20px; width: 60px; text-align: center; font-weight: bold;}
+a.twitter:hover, a.twitter:focus {
+	background-color:#0c7abf;
+	}
+	
+a.twitter:before {
+  content: "\f099";
+  margin-right: 0.5em;
+  color:#ffffff;
+  font-family: FontAwesome;
 }
 
 .menu ul {

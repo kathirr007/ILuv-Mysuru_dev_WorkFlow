@@ -58,7 +58,4 @@
             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             //responsive code end
-
-
-
         };
