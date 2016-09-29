@@ -86,22 +86,28 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 
 
 .finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2 {
-    color: #b65c39 !important;
+    color: #b65c39 !important; font-weight:bold !important;
 }
 .history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2 {
-    color: #c647bb !important;
+    color: #c647bb !important; font-weight:bold !important;
 }
 .hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2 {
-    color: #27aef5 !important;
+    color: #27aef5 !important; font-weight:bold !important;
 }
 .lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2 {
-    color: #085ac0 !important;
+    color: #085ac0 !important; font-weight:bold !important;
 }
 .placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2 {
-    color: #448802 !important;
+    color: #448802 !important; font-weight:bold !important;
 }
 .upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2 {
-    color: #fbaa20 !important;
+    color: #fbaa20 !important; font-weight:bold !important;
+}
+.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2 {
+    color: #f7502a !important; font-weight:bold !important;
+}
+.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2 {
+    color: #14bec4 !important; font-weight:bold !important;
 }
 
 body > div.my-container > div > div.search-result > h2 {

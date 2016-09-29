@@ -51,11 +51,11 @@ $(details).each(function(event){
 });
 });
 
-out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
-out2 += "</div>";
-out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
-out3 += "</div>";
-maps += "</div>";
+out2 += '<p style="color:#b65c39; font-family: \'Abel\', sans-serif; font-weight:bold; padding:10px;">' + arr[idx].title + '</p></div>';
+out2 += '</div>';
+out3 += '<div>'+ $("<div/>").html(arr[idx].details).text() +'</div>';
+out3 += '</div>';
+maps += '</div>';
 
 
 <!-- @include _google_map.js -->

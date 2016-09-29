@@ -36,7 +36,7 @@ body {
 	display:inline-block;
 }
 
-a.twitter {font-family:arial; font-size: 12px; background-color: #55acee; height: 20px; width: 60px; text-align: center; font-weight: bold;}
+a.twitter {font-family:arial; font-size: 12px; background-color: #55acee; height: 20px; width: 60px; text-align: center; font-weight: bold; border-radius: 3px !important; line-height:22px;}
 a.twitter:hover, a.twitter:focus {
 	background-color:#0c7abf;
 	}
@@ -86,7 +86,7 @@ a.twitter:before {
 .icon-menu {
 	color: #fff;
 	cursor: pointer;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Abel', sans-serif;
 	font-size: 20px;
 	font-weight:bold;
 	padding-bottom: 10px;
