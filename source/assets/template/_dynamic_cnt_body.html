@@ -2,7 +2,7 @@ function getUrl (path, pages){
 for(i=0; i<pages.length; i++){
    if (pages[i][0] || pages[i][1] === location.pathname){
    	return function(){
-       url = "master/json/" + pages[i][2] + ".json";
+       url = "assets/json/" + pages[i][2] + ".json";
        url_link = pages[i][1] + ".html?pid=";   		
    	};
    }
@@ -12,7 +12,7 @@ for(i=0; i<pages.length; i++){
 
 
 // var xmlhttp = new XMLHttpRequest();
-// var url = "master/json/dineRestaurants.json";
+// var url = "assets/json/dineRestaurants.json";
 var xmlhttp = new XMLHttpRequest(),
 	pages = [
 				["finedine","finedinedetail","dineRestaurants"],
@@ -85,7 +85,7 @@ var gall = arr[i].galleries,
 // console.log(gall);
 
 	if (gall.length === 0) {
-	thumbImage = "master/images/noimg.png"; }
+	thumbImage = "assets/images/noimg.png"; }
 	else {
 	thumbImage = encodeURI(arr[i].galleries[0].img_name);
 	}

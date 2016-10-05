@@ -1,14 +1,14 @@
 var xmlhttp = new XMLHttpRequest(),
-	path = location.pathname.split(".")[0].split("/").pop(),
+	path = location.href.split(".html")[0].split("/").pop(),
 	pathname = path.includes("detail") ? path.split("detail")[0] : path,
 	pathPid = location.href.slice(-16),
-	url = "master/json/" + pathname + ".json";
+	url = "assets/json/" + pathname + ".json";
 
 // custom styles
 	$('body').addClass(pathname);
 	$('a[href="#id02"]').click(function(){$('.detailblock').css({"padding":"50px 0px 0px 0px !important;"})});
 
-console.log(pathname);console.log(pathPid);console.log(url);
+console.log(path);console.log(pathname);console.log(pathPid);console.log(url);
 
 <!-- @include _javascript_ajax.js -->
 
