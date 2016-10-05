@@ -65,7 +65,7 @@ if (devBuild==='development') {
 	mainjs = {
 		in: source + "*.js",
 		out: dest
-	}	
+	};
 	htmlSources = {
 		in: source + '*.html',
 		watch: [source + '*.html', source + 'template/**/*'],
@@ -210,11 +210,11 @@ gulp.task('fonts', function() {
 // compile css
 
 gulp.task('css', function(){
-	var source = gulp.src(cssSources.in)
+	var source = gulp.src(cssSources.in);
 	// .pipe(concat('style.css'))
 	if(devBuild === "development") {
 		source.pipe(gulp.dest(cssSources.out))
-			  .pipe(browsersync.reload({ stream: true }));;
+			  .pipe(browsersync.reload({ stream: true }));
 	} else {
 		source.pipe(size({ title: 'CSS in' }))
 			  .pipe(cleanCSS({processImport:false}))

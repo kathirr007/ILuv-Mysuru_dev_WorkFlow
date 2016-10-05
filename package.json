@@ -25,6 +25,7 @@
     "gulp-if": "^2.0.1",
     "gulp-imacss": "^1.0.0",
     "gulp-imagemin": "^3.0.3",
+    "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.1",
     "gulp-jsoncombine": "^1.0.3",
     "gulp-jsonlint": "^1.1.2",
@@ -35,6 +36,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-size": "^2.1.0",
     "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "jshint-stylish": "^2.2.1"
   }
 }
