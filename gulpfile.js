@@ -61,7 +61,7 @@ if (devBuild==='development') {
 
 	// devBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'),
 
-	source = 'source/master/';
+	source = 'source/assets/';
 	mainjs = {
 		in: source + "*.js",
 		out: dest
@@ -79,7 +79,7 @@ if (devBuild==='development') {
 
 	imagesSources = {
 		in: source + 'images/*.*',
-		out: dest + 'master/images/'
+		out: dest + 'assets/images/'
 	};
 
 	imguri = {
@@ -93,7 +93,7 @@ if (devBuild==='development') {
 		// in: [source + 'scss/main.scss', source + 'css/**/*'],
 		in: source + 'css/**/*',
 		watch: [source + 'scss/**/*', source + 'css/**/*', '!' + imguri.out + imguri.filename],
-		out: dest + 'master/css/',
+		out: dest + 'assets/css/',
 		sassOpts: {
 			outputStyle: 'nested',
 			imagePath: '../images',
@@ -111,7 +111,7 @@ if (devBuild==='development') {
 
 	fontsSources = {
 		in: source + 'fonts/*.*',
-		out: dest + 'master/fonts/'
+		out: dest + 'assets/fonts/'
 	};
 
 	jsSources = {
@@ -126,13 +126,13 @@ if (devBuild==='development') {
 			 source + 'js/menu-jquery.js',
 			 source + 'js/menu-jquery1.js'
 			],
-		out: dest + 'master/js/',
+		out: dest + 'assets/js/',
 		filename: 'main.js'
 	};
 
 	jsonSources = {
 		in: source + 'json/**/*',
-		out: dest + 'master/json/',
+		out: dest + 'assets/json/',
 		filename: 'main.json'
 	};
 
