@@ -413,6 +413,11 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 }
 
 
+#jssor_1 > div > div > div div img {
+	width:100% !important;
+	height:auto !important;
+}
+
 
 .jssorb05 {
 	position: absolute;
