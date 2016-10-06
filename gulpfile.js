@@ -1,6 +1,3 @@
-// Gulp.js configuration
-
-// include gulp and plugins
 var
 	gulp = require('gulp'),
 	newer = require('gulp-newer'),
@@ -24,6 +21,7 @@ var
 	jsoncombine = require('gulp-jsoncombine'),
 	jsonminify = require('gulp-jsonminify'),
 	browsersync = require('browser-sync'),
+	esformatter = require('gulp-esformatter'),
 	pkg = require('./package.json');
 
 var devBuild,
@@ -66,6 +64,7 @@ if (devBuild==='development') {
 		in: source + "*.js",
 		out: dest
 	};
+	
 	htmlSources = {
 		in: source + '*.html',
 		watch: [source + '*.html', source + 'template/**/*'],
@@ -181,7 +180,9 @@ gulp.task('html', function() {
 			.pipe(htmlclean())
 			.pipe(size({ title: 'HTML out' }));
 	}
-	return page.pipe(gulp.dest(htmlSources.out));
+	return page
+			// .pipe(esformatter())
+			.pipe(gulp.dest(htmlSources.out));
 });
 
 // manage images
