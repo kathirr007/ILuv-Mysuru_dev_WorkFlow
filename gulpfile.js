@@ -24,6 +24,7 @@ var
 	jsoncombine = require('gulp-jsoncombine'),
 	jsonminify = require('gulp-jsonminify'),
 	browsersync = require('browser-sync'),
+	esformatter = require('gulp-esformatter'),
 	pkg = require('./package.json');
 
 var devBuild,
@@ -65,7 +66,7 @@ if (devBuild==='development') {
 	mainjs = {
 		in: source + "*.js",
 		out: dest
-	}	
+	};	
 	htmlSources = {
 		in: source + '*.html',
 		watch: [source + '*.html', source + 'template/**/*'],
@@ -181,7 +182,9 @@ gulp.task('html', function() {
 			.pipe(htmlclean())
 			.pipe(size({ title: 'HTML out' }));
 	}
-	return page.pipe(gulp.dest(htmlSources.out));
+	return page
+			.pipe(esformatter())
+			.pipe(gulp.dest(htmlSources.out));
 });
 
 // manage images
@@ -210,11 +213,11 @@ gulp.task('fonts', function() {
 // compile css
 
 gulp.task('css', function(){
-	var source = gulp.src(cssSources.in)
+	var source = gulp.src(cssSources.in);
 	// .pipe(concat('style.css'))
 	if(devBuild === "development") {
 		source.pipe(gulp.dest(cssSources.out))
-			  .pipe(browsersync.reload({ stream: true }));;
+			  .pipe(browsersync.reload({ stream: true }));
 	} else {
 		source.pipe(size({ title: 'CSS in' }))
 			  .pipe(cleanCSS({processImport:false}))
