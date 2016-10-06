@@ -9,7 +9,7 @@ var gall = arr[i].galleries,
 function getstars(ratingstars){
 	ratingstar = "";
 		for (j=0; j < ratingstars; j++) {
-			ratingstar += '<img src="master/images/ratingstar.png" alt="" />';
+			ratingstar += '<img src="assets/images/ratingstar.png" alt="" />';
 		}
 	return ratingstar;
 	};
@@ -17,7 +17,7 @@ function getstars(ratingstars){
 // var actualRating = getstars(ratingstars);
 
 	if (gall.length === 0) {
-	thumbImage = "master/images/noimg.png"; }
+	thumbImage = "assets/images/noimg.png"; }
 	else {
 	thumbImage = encodeURI(arr[i].galleries[0].img_path);
 	}

@@ -1,6 +1,3 @@
-// Gulp.js configuration
-
-// include gulp and plugins
 var
 	gulp = require('gulp'),
 	newer = require('gulp-newer'),
@@ -183,7 +180,7 @@ gulp.task('html', function() {
 			.pipe(size({ title: 'HTML out' }));
 	}
 	return page
-			.pipe(esformatter())
+			// .pipe(esformatter())
 			.pipe(gulp.dest(htmlSources.out));
 });
 
