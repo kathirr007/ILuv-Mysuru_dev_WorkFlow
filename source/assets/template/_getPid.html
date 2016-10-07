@@ -1,12 +1,12 @@
 <script type="text/javascript">
-  function getPid() {
+function getPid() {
     var re = /pid=(\w+)$/;
     var url = location.href;
     var matches = re.exec(url);
     var pid = "";
     if (matches.length == 2) {
-      pid = matches[1];
+        pid = matches[1];
     }
     return pid;
-  }
-</script> 
+}
+</script>
