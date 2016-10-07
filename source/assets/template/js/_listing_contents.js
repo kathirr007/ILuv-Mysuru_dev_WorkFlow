@@ -4,8 +4,7 @@ var gall = arr[i].galleries,
 	ratingstars = arr[i].ratingstar,
 	kms = arr[i].nearkm,
 	kms = kms ? kms : "- ";
-	
-	
+
 function getstars(ratingstars){
 	ratingstar = "";
 		for (j=0; j < ratingstars; j++) {
@@ -13,9 +12,7 @@ function getstars(ratingstars){
 		}
 	return ratingstar;
 	};
-	
 // var actualRating = getstars(ratingstars);
-
 	if (gall.length === 0) {
 	thumbImage = "assets/images/noimg.png"; }
 	else {

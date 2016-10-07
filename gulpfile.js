@@ -1,53 +1,15 @@
-var
-	gulp = require('gulp'),
-	newer = require('gulp-newer'),
-	concat = require('gulp-concat'),
-	browserify = require('gulp-browserify'),
-	htmlclean = require('gulp-htmlclean'),
-	cleanCSS = require('gulp-clean-css'),
-	gulpif = require('gulp-if'),
-	imagemin = require('gulp-imagemin'),
-	imacss = require('gulp-imacss'),
-	sass = require('gulp-sass'),
-	pleeease = require('gulp-pleeease'),
-	preprocess = require('gulp-preprocess'),
-	jshint = require('gulp-jshint'),
-	deporder = require('gulp-deporder'),
-	stripdebug = require('gulp-strip-debug'),
-	uglify = require('gulp-uglify'),
-	size = require('gulp-size'),
+var gulp = require('gulp'),
 	del = require('del'),
-	jsonlint = require('gulp-jsonlint'),
-	jsoncombine = require('gulp-jsoncombine'),
-	jsonminify = require('gulp-jsonminify'),
 	browsersync = require('browser-sync'),
 	esformatter = require('gulp-esformatter'),
-	pkg = require('./package.json');
+	pkg = require('./package.json'),
+	$ = require('gulp-load-plugins')({lazy: true});
 
-var devBuild,
-    source,
-    mainjs,
-    dest,
-    htmlSources,
-    imagesSources,
-    imguri,
-    cssSources,    
-    fontsSources,    
-    coffeeSources,
-    jsSources,
-    sassSources,
-    jsonSources,
-    sassStyle,
-    syncOpts;
-
+// source variables
+var devBuild,source,mainjs,dest,htmlSources,imagesSources,imguri,cssSources,fontsSources,coffeeSources,jsSources,sassSources,jsonSources,sassStyle,syncOpts;
 
 // file locations
-
-
-
 devBuild = process.env.NODE_ENV || 'development';
-	// path = window.location.pathname.split(".")[0].split("/").pop(),
-	// pathname = path.includes("detail") ? path.split("detail")[0] : path;
 
 if (devBuild==='development') {
   dest = 'builds/development/';
@@ -56,14 +18,16 @@ if (devBuild==='development') {
   dest = 'builds/production/';
   // sassStyle = 'compressed';
 }
-
-	// devBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'),
-
 	source = 'source/assets/';
 	mainjs = {
 		in: source + "*.js",
 		out: dest
 	};
+	dynamicContentsJs = {
+		in: source + "template/js/_dynamic_cnt_body.js",
+		watch: [source + 'template/**/*'],
+		out: dest + "assets/js/"
+	};	
 	
 	htmlSources = {
 		in: source + '*.html',
@@ -158,11 +122,6 @@ gulp.task('clean', function() {
 	]);
 });
 
-// gulp.task('filename', function(){
-// 	console.log(__filename);
-	
-// });
-
 // load datas
 gulp.task('mainjs', function() {
 	gulp.src(mainjs.in)
@@ -173,12 +132,12 @@ gulp.task('mainjs', function() {
 
 // build HTML files
 gulp.task('html', function() {
-	var page = gulp.src(htmlSources.in).pipe(preprocess({ context: htmlSources.context }));
+	var page = gulp.src(htmlSources.in).pipe($.preprocess({ context: htmlSources.context }));
 	if (devBuild === 'production') {
 		page = page
-			.pipe(size({ title: 'HTML in' }))
-			.pipe(htmlclean())
-			.pipe(size({ title: 'HTML out' }));
+			.pipe($.size({ title: 'HTML in' }))
+			.pipe($.htmlclean())
+			.pipe($.size({ title: 'HTML out' }));
 	}
 	return page
 			// .pipe(esformatter())
@@ -188,23 +147,23 @@ gulp.task('html', function() {
 // manage images
 gulp.task('images', function() {
 	return gulp.src(imagesSources.in)
-		.pipe(newer(imagesSources.out))
-		.pipe(imagemin())
+		.pipe($.newer(imagesSources.out))
+		.pipe($.imagemin())
 		.pipe(gulp.dest(imagesSources.out));
 });
 
 // convert inline images to dataURIs in SCSS source
 gulp.task('imguri', function() {
 	return gulp.src(imguri.in)
-		.pipe(imagemin())
-		.pipe(imacss(imguri.filename, imguri.namespace))
+		.pipe($.imagemin())
+		.pipe($.imacss(imguri.filename, imguri.namespace))
 		.pipe(gulp.dest(imguri.out));
 });
 
 // copy fonts
 gulp.task('fonts', function() {
 	return gulp.src(fontsSources.in)
-		.pipe(newer(fontsSources.out))
+		.pipe($.newer(fontsSources.out))
 		.pipe(gulp.dest(fontsSources.out));
 });
 
@@ -217,9 +176,9 @@ gulp.task('css', function(){
 		source.pipe(gulp.dest(cssSources.out))
 			  .pipe(browsersync.reload({ stream: true }));
 	} else {
-		source.pipe(size({ title: 'CSS in' }))
-			  .pipe(cleanCSS({processImport:false}))
-			  .pipe(size({ title: 'CSS out' }))
+		source.pipe($.size({ title: 'CSS in' }))
+			  .pipe($.cleanCss({processImport:false}))
+			  .pipe($.size({ title: 'CSS out' }))
 			  .pipe(gulp.dest(cssSources.out))
 			  .pipe(browsersync.reload({ stream: true }));
 	}
@@ -242,7 +201,7 @@ gulp.task('css', function(){
 gulp.task('js', function() {
 	// if (devBuild === "development") {
 		return gulp.src(jsSources.in)
-			.pipe(newer(jsSources.out))
+			.pipe($.newer(jsSources.out))
 			// .pipe(jshint())
 			// .pipe(jshint.reporter('default'))
 			// .pipe(jshint.reporter('fail'))
@@ -264,12 +223,19 @@ gulp.task('js', function() {
 	// }
 });
 
+gulp.task('dynamicJs', function() {
+		return gulp.src(dynamicContentsJs.in).pipe($.preprocess())
+				   .pipe($.rename("dynamicContents.js"))
+				   .pipe(gulp.dest(dynamicContentsJs.out));
+
+});
+
 gulp.task('json', function() {
 	if (devBuild === "development") {
 		return gulp.src(jsonSources.in)
-			.pipe(newer(jsonSources.out))
-			.pipe(jsonlint())
-			.pipe(jsonlint.reporter())
+			.pipe($.newer(jsonSources.out))
+			.pipe($.jsonlint())
+			.pipe($.jsonlint.reporter())
 			.pipe(gulp.dest(jsonSources.out));
 	}
 	else {
@@ -279,10 +245,10 @@ gulp.task('json', function() {
 		return gulp.src(jsonSources.in)
 			.pipe(deporder())
 			// .pipe(concat(jsonSources.filename))
-			.pipe(size({ title: 'JS in '}))
-			.pipe(stripdebug())
-			.pipe(jsonminify())
-			.pipe(size({ title: 'JS out '}))
+			.pipe($.size({ title: 'JS in '}))
+			.pipe($.stripdebug())
+			.pipe($.jsonminify())
+			.pipe($.size({ title: 'JS out '}))
 			.pipe(gulp.dest(jsonSources.out));
 	}
 });
@@ -292,28 +258,19 @@ gulp.task('browsersync', function() {
 	browsersync(syncOpts);
 });
 
-// default task
-gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'json', 'browsersync'], function() {
-
-	// html changes
+// watch
+gulp.task('watch', function() {
 	gulp.watch(htmlSources.watch, ['html', browsersync.reload]);
-
-	// image changes
 	gulp.watch(imagesSources.in, ['images']);
-
-	// font changes
 	gulp.watch(fontsSources.in, ['fonts']);
-
-	// css changes
 	gulp.watch([cssSources.watch, imguri.in], ['css']);
+	gulp.watch(jsSources.in, ['js', browsersync.reload]);
+	gulp.watch(dynamicContentsJs.watch, ['dynamicJs', browsersync.reload]);
+	gulp.watch(jsonSources.in, ['json', browsersync.reload]);	
+});
 
+// default task
+gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'browsersync', 'watch'], function() {
 	// sass changes
 	// gulp.watch([cssSources.watch, imguri.in], ['sass']);
-
-	// javascript changes
-	gulp.watch(jsSources.in, ['js', browsersync.reload]);
-
-	// json changes
-	gulp.watch(jsonSources.in, ['json', browsersync.reload]);	
-
 });
