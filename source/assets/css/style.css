@@ -7,6 +7,8 @@
 @import url('form-register.css');
 @import url('contact-buttons.css');
 @import url('preloader.css');
+@import url('animate.min.css');
+@import url('component.css');
 
 /* GLOBAL */
 body {
@@ -85,28 +87,28 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 }
 
 
-.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2 {
+.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2, .finedine #listings li a section aside h4 {
     color: #b65c39 !important; font-weight:bold !important;
 }
-.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2 {
+.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2, .history #listings li a section aside h4 {
     color: #c647bb !important; font-weight:bold !important;
 }
-.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2 {
+.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2, .hotelslodging #listings li a section aside h4 {
     color: #27aef5 !important; font-weight:bold !important;
 }
-.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2 {
+.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2, .lifestyle #listings li a section aside h4 {
     color: #085ac0 !important; font-weight:bold !important;
 }
-.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2 {
+.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2, .placesofinterest #listings li a section aside h4 {
     color: #448802 !important; font-weight:bold !important;
 }
-.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2 {
+.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2, .upcomingevents #listings li a section aside h4 {
     color: #fbaa20 !important; font-weight:bold !important;
 }
-.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2 {
+.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2, .yogacenter #listings li a section aside h4 {
     color: #f7502a !important; font-weight:bold !important;
 }
-.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2 {
+.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2, .localfavorites #listings li a section aside h4 {
     color: #14bec4 !important; font-weight:bold !important;
 }
 
@@ -363,6 +365,40 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks ul li ul li:nth-of-type(2)::after{
 	content: "\00a0";
 }
+#listings li.list-items a {
+	padding:10px;
+	color: #222222;
+	font-family: 'Abel', sans-serif;
+	font-size:1em;
+	background:white;
+	margin-bottom:1px;
+}
+#listings li a section > figure {
+	float:left;
+	width:35%;
+	height:75px;
+}
+#listings li a section > figure > img {
+	width:100%;
+	height:100%;
+}
+#listings li a section aside {
+	float:right;
+	width:60%;
+}
+#listings li a section aside h4 {
+	margin-top:0px;
+}
+#listings li a section aside p {
+	color: #222222;
+	font-family: 'Abel', sans-serif;
+}
+#listings li a section aside figure {
+    background: url(../images/ratings_bg.png) 0px 2px no-repeat;
+    width: 56px;
+    height:16px;
+    float:left;	
+}
 
 #placedetailbanner {width:auto; margin: 0px !important;overflow: hidden !important;}
 #box1 {
@@ -481,3 +517,47 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	background-position: -310px -31px;
 }
 
+@media screen and (min-width:800px) {
+	#listings {
+		width:100%;
+		margin:0 auto;
+		display:flex;
+		flex-flow:row wrap;
+		justify-content:center;
+	}
+	#listings > li.list-items {
+		width:31%;
+		margin:0.5em;
+		display:flex;
+	}
+}
+@media screen and (max-width:800px) and (min-width:600px) {
+	#listings {
+		width:100%;
+		margin:0 auto;
+		display:flex;
+		flex-flow:row wrap;
+		justify-content:center;
+	}	
+	#listings > li.list-items {
+		width:45%;
+		margin:0.5em;
+		display:flex;
+	}
+	#listings > li.list-items a {
+		display:flex;
+	}
+	#listings > li.list-items, #listings > li.list-items a, #listings > li.list-items a section {
+		flex-grow:1;
+	}	
+/* 	#listings li a section > figure {
+		width:50%;
+		height:auto;
+		float:none;
+		margin:0 auto;
+	}
+	#listings li a section aside {
+		width:100%;
+		margin:0.5em 0 0 0;
+	}	 */
+}

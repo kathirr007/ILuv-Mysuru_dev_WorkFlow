@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/kathirr007/ILuv-Mysuru_dev_WorkFlow/#readme",
   "devDependencies": {
+    "animate.css": "^3.5.2",
     "browser-sync": "^2.16.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",

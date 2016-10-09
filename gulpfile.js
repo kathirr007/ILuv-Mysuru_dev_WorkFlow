@@ -80,7 +80,12 @@ jsSources = { in : [
         source + 'js/jquery.contact-buttons.js',
         source + 'js/social_buttons.js',
         source + 'js/menu-jquery.js',
-        source + 'js/menu-jquery1.js'
+        source + 'js/menu-jquery1.js',
+        source + 'js/AnimOnScroll.js',
+		source + 'js/AnimOnScroll.js',
+        source + 'js/masonry.pkgd.min.js',
+		source + 'js/imagesloaded.js',
+		source + 'js/classie.js'
     ],
     out: dest + 'assets/js/',
     filename: 'main.js'

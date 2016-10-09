@@ -23,7 +23,7 @@ window.onload = function() {
 
         function myFunction(response) {
             var arr = JSON.parse(response),
-                i, ratingstar, out = "<div>",
+                i, ratingstar, out = "",
                 out2 = "<div>",
                 out3 = "<div id=\"details\">",
                 maps = "<div id=\"map-canvas\">";
