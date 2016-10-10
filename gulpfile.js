@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     del = require('del'),
+    minify = require('minify'),
     browsersync = require('browser-sync'),
-    esformatter = require('gulp-esformatter'),
     pkg = require('./package.json'),
     $ = require('gulp-load-plugins')({ lazy: true });
 
@@ -73,19 +73,7 @@ fontsSources = { in : source + 'fonts/*.*',
 
 jsSources = { in : [
         // source + 'js/jquery-ui.min.js',
-        source + 'js/jquery-1.12.4.min.js',
-        source + 'js/bootstrap.min.js',
-        source + 'js/jssor.slider-21.1.5.min.js',
-        source + 'js/carousel.js',
-        source + 'js/jquery.contact-buttons.js',
-        source + 'js/social_buttons.js',
-        source + 'js/menu-jquery.js',
-        source + 'js/menu-jquery1.js',
-        source + 'js/AnimOnScroll.js',
-		source + 'js/AnimOnScroll.js',
-        source + 'js/masonry.pkgd.min.js',
-		source + 'js/imagesloaded.js',
-		source + 'js/classie.js'
+        source + 'js/jquery-1.12.4.min.js', source + 'js/bootstrap.min.js', source + 'js/jssor.slider-21.1.5.min.js', source + 'js/carousel.js', source + 'js/jquery.contact-buttons.js', source + 'js/social_buttons.js', source + 'js/menu-jquery.js', source + 'js/menu-jquery1.js'
     ],
     out: dest + 'assets/js/',
     filename: 'main.js'
@@ -122,14 +110,29 @@ gulp.task('clean', function() {
 // load datas
 gulp.task('mainjs', function() {
     gulp.src(mainjs.in)
+        .pipe($.if(devBuild === 'production', $.uglify()))
         .pipe(gulp.dest(mainjs.out))
-        // .pipe(connect.reload())
         .pipe(browsersync.reload({ stream: true }));
+});
+
+// Prettify source files
+// gulp.task('prettify', function() {
+
+// }
+
+// build HTML files
+gulp.task('minifyTest', function() {
+	return gulp.src(jsSources.in)
+        .pipe($.newer(jsSources.out))
+        .pipe($.uglify())
+        .pipe(gulp.dest(jsSources.out));
 });
 
 // build HTML files
 gulp.task('html', function() {
-    var page = gulp.src(htmlSources.in).pipe($.preprocess({ context: htmlSources.context }));
+    var page = gulp.src(htmlSources.in)
+    			   .pipe($.jsbeautifier({"max_preserve_newlines": 0}))
+    			   .pipe($.preprocess({ context: htmlSources.context }));
     if (devBuild === 'production') {
         page = page
             .pipe($.size({ title: 'HTML in' }))
@@ -199,30 +202,17 @@ gulp.task('js', function() {
     // if (devBuild === "development") {
     return gulp.src(jsSources.in)
         .pipe($.newer(jsSources.out))
-        // .pipe(jshint())
+        .pipe($.if(devBuild === 'production', $.uglify()))
         // .pipe(jshint.reporter('default'))
         // .pipe(jshint.reporter('fail'))
         .pipe(gulp.dest(jsSources.out));
-    // }
-    // else {
-    // 	del([
-    // 		dest + 'js/*'
-    // 	]);
-    // 	return gulp.src(jsSources.in)
-    // 		.pipe(deporder())
-    // 		.pipe(browserify())
-    // 		.pipe(concat(jsSources.filename))
-    // 		.pipe(size({ title: 'JS in '}))
-    // 		// .pipe(stripdebug())
-    // 		// .pipe(uglify())
-    // 		.pipe(size({ title: 'JS out '}))
-    // 		.pipe(gulp.dest(jsSources.out));
-    // }
+
 });
 
 gulp.task('dynamicJs', function() {
     return gulp.src(dynamicContentsJs.in).pipe($.preprocess())
         .pipe($.rename("dynamicContents.js"))
+        .pipe($.if(devBuild === 'production', $.uglify()))
         .pipe(gulp.dest(dynamicContentsJs.out));
 
 });
@@ -239,10 +229,10 @@ gulp.task('json', function() {
             dest + 'json/*'
         ]);
         return gulp.src(jsonSources.in)
-            .pipe(deporder())
+            .pipe($.deporder())
             // .pipe(concat(jsonSources.filename))
             .pipe($.size({ title: 'JS in ' }))
-            .pipe($.stripdebug())
+            .pipe($.stripDebug())
             .pipe($.jsonminify())
             .pipe($.size({ title: 'JS out ' }))
             .pipe(gulp.dest(jsonSources.out));
