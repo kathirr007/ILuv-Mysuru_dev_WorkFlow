@@ -7,8 +7,8 @@
 @import url('form-register.css');
 @import url('contact-buttons.css');
 @import url('preloader.css');
-@import url('animate.min.css');
-@import url('component.css');
+/*@import url('animate.min.css');
+@import url('component.css');*/
 
 /* GLOBAL */
 body {
@@ -112,10 +112,11 @@ div#preheader .jumbotron li:nth-of-type(2) a{
     color: #14bec4 !important; font-weight:bold !important;
 }
 
-body > div.my-container > div > div.search-result > h2 {
+body > div.my-container > div > div ul.search-result > h2 {
 	font-weight:normal;
 	color:#ffffff;
 	font-size:1.15em;
+	width:100%;
 }
 /* Collapsible pannel styles */
 .main-content{
@@ -393,7 +394,7 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks ul li ul li:nth-of-type(2)::after{
 	content: "\00a0";
 }
-#listings li.list-items a {
+ul.listings li.list-items a {
 	padding:10px;
 	color: #222222;
 	font-family: 'Abel', sans-serif;
@@ -401,27 +402,27 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	background:white;
 	margin-bottom:1px;
 }
-#listings li a section > figure {
+ul.listings li a section > figure {
 	float:left;
 	width:35%;
 	height:75px;
 }
-#listings li a section > figure > img {
+ul.listings li a section > figure > img {
 	width:100%;
 	height:100%;
 }
-#listings li a section aside {
+ul.listings li a section aside {
 	float:right;
 	width:60%;
 }
-#listings li a section aside h4 {
+ul.listings li a section aside h4 {
 	margin-top:0px;
 }
-#listings li a section aside p {
+ul.listings li a section aside p {
 	color: #222222;
 	font-family: 'Abel', sans-serif;
 }
-#listings li a section aside figure {
+ul.listings li a section aside figure {
     background: url(../images/ratings_bg.png) 0px 2px no-repeat;
     width: 56px;
     height:16px;
@@ -546,46 +547,46 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 }
 
 @media screen and (max-width:2560px) {
-	#listings {
+	ul.listings {
 		width:100%;
 		margin:0 auto;
 		display:flex;
 		flex-flow:row wrap;
 		justify-content:center;
 	}
-	#listings > li.list-items {
+	ul.listings > li.list-items {
 		width:18%;
 		margin:0.5em;
 		display:flex;
 	}
 }
-@media screen and (max-width:2559px) and (min-width:1025px) {
-	#listings > li.list-items {
+@media screen and (max-width:2559px) {
+	ul.listings > li.list-items {
 		width:20%;
 	}
 }
-@media screen and (max-width:1024px) and (min-width:801px) {
-	#listings > li.list-items {
+@media screen and (max-width:1024px) {
+	ul.listings > li.list-items {
 		width:31%;
 	}
 }
-@media screen and (max-width:800px) and (min-width:481px) {
-	#listings > li.list-items {
+@media screen and (max-width:800px) {
+	ul.listings > li.list-items {
 		width:45%;
 	}
-	#listings > li.list-items a {
+	ul.listings > li.list-items a {
 		display:flex;
 	}
-	#listings > li.list-items, #listings > li.list-items a, #listings > li.list-items a section {
-		flex-grow:1;
+	ul.listings > li.list-items, ul.listings > li.list-items a, ul.listings > li.list-items a section {
+/* 		flex-grow:1; */
 	}	
 }
 @media screen and (max-width:480px) {
-	#listings > li.list-items {
+	ul.listings > li.list-items {
 		width:100%;
 		margin:0 !important;
 	}
-#listings li.list-items a {
+ul.listings li.list-items a {
 	padding:10px;
 	color: #222222;
 	font-family: 'Abel', sans-serif;
@@ -593,7 +594,7 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	background:white;
 	margin:0 0 1px 0 !important;
 }
-	#listings > li.list-items, #listings > li.list-items a, #listings > li.list-items a section {
+	ul.listings > li.list-items, #listings > li.list-items a, #listings > li.list-items a section {
 		flex-grow:1;
 	}	
 }
