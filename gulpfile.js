@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     del = require('del'),
-    minify = require('minify'),
     browsersync = require('browser-sync'),
     pkg = require('./package.json'),
     $ = require('gulp-load-plugins')({ lazy: true });

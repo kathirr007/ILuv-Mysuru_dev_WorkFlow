@@ -1,0 +1,1 @@
+$(function(){var n=function(){$(".icon-menu").click(function(n){n.stopPropagation(),$(".menu").animate({marginLeft:"0px",height:"100%"},250)}),$("body").click(function(){$(".menu").animate({marginLeft:"-285px",height:"0px"},250),$("body").animate({left:"0px"},200)})};$(document).ready(n)});

@@ -87,28 +87,28 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 }
 
 
-.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2, .finedine ul.listings li a section aside h4 {
+.finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2, .finedine #listings li a section aside h4 {
     color: #b65c39 !important; font-weight:bold !important;
 }
-.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2, .history ul.listings li a section aside h4 {
+.history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2, .history #listings li a section aside h4 {
     color: #c647bb !important; font-weight:bold !important;
 }
-.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2, .hotelslodging ul.listings li a section aside h4 {
+.hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2, .hotelslodging #listings li a section aside h4 {
     color: #27aef5 !important; font-weight:bold !important;
 }
-.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2, .lifestyle ul.listings li a section aside h4 {
+.lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2, .lifestyle #listings li a section aside h4 {
     color: #085ac0 !important; font-weight:bold !important;
 }
-.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2, .placesofinterest ul.listings li a section aside h4 {
+.placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2, .placesofinterest #listings li a section aside h4 {
     color: #448802 !important; font-weight:bold !important;
 }
-.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2, .upcomingevents ul.listings li a section aside h4 {
+.upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2, .upcomingevents #listings li a section aside h4 {
     color: #fbaa20 !important; font-weight:bold !important;
 }
-.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2, .yogacenter ul.listings li a section aside h4 {
+.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2, .yogacenter #listings li a section aside h4 {
     color: #f7502a !important; font-weight:bold !important;
 }
-.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2, .localfavorites ul.listings li a section aside h4 {
+.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2, .localfavorites #listings li a section aside h4 {
     color: #14bec4 !important; font-weight:bold !important;
 }
 
