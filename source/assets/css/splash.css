@@ -50,7 +50,7 @@ h1.main,p.demos {
 	height:auto !important;
 	}
 .sp-content {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	left: 0px;
@@ -59,10 +59,10 @@ h1.main,p.demos {
 }
 .sp-container h2 {
 	position: absolute;
-	top: 55%;
+	top: 45%;
 	line-height: 1em;
 	height: 100px;
-	margin-top: -50%;
+/* 	margin-top: -50%; */
 	font-size: 3.5em;
 	width: 100%;
 	text-align: center;
@@ -109,7 +109,7 @@ h1.main,p.demos {
 	top: 50%;
 	margin: -137px 0 0 -141px;
 	background: transparent url(../images/globe.png) no-repeat top left;
-	animation: fadeInBack 3.6s linear 10.5s backwards;
+	animation: fadeInBack 2s linear 6s backwards;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 	filter: alpha(opacity=30);
 	opacity: 0.3;
