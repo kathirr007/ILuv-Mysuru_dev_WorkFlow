@@ -1,7 +1,7 @@
 function buildSlider(sliderImagesList) {
     var sliderContent = '';
-    sliderContent += '<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">\
-		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">';
+    sliderContent += '<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 600px; height: 285px; overflow: hidden; visibility: hidden;">\
+		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 285px; overflow: hidden;">';
     sliderImagesList.forEach(function(item) {
         var img_name = encodeURI(item.img_path);
         sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="' + item.img_path + '"/></div>';
