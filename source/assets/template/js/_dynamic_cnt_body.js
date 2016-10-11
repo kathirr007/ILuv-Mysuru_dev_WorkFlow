@@ -9,6 +9,7 @@ window.onload = function() {
         }
         var pathPid = location.href.slice(-16),
             url = "assets/json/" + pathname + ".json";
+        // @include _sanDetails.js
 
         // custom styles
         $('body').addClass(pathname);
@@ -62,9 +63,11 @@ window.onload = function() {
                                 });
                             });
 
+                            var sanDetails = replaceHtmlEntites(arr[idx].details);
+                            
                             out2 += '<p style="color:#b65c39; font-family: \'Abel\', sans-serif; font-weight:bold; padding:10px;">' + arr[idx].title + '</p></div>';
                             out2 += '</div>';
-                            out3 += '<div>' + $("<div/>").html(arr[idx].details).text() + '</div>';
+                            out3 += '<div>' + $("<div/>").html(sanDetails).text() + '</div>';
                             out3 += '</div>';
                             maps += '</div>';
 
