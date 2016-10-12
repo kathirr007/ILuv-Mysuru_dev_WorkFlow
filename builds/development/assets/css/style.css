@@ -21,6 +21,11 @@ body {
 	font-size:14px;
 	background-color:#0f2b50;
 }
+#main_cc_coupon {
+	display:none !important;
+	z-index:-1000000000;
+}
+
 a {
 	outline: none !important;
 }
@@ -54,10 +59,6 @@ a[href^="tel:"]:before {
 .clearfix:after {
     clear: both;
 }
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
 .clearfix {
     *zoom: 1;
 }
@@ -85,6 +86,120 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 	display:inline-block;
 	font-size:1.5em;
 }
+
+/* mainPage grid styles */
+	.welcome-slider #jssor_1 div.tableBlock div.tableCell, .welcome-slider #jssor_1 div.tableBlock div.tableCell2 {
+    display: table-cell !important;
+    padding: 10px;
+	vertical-align:middle;
+	text-align:center;
+	font-family: 'Abel', sans-serif;
+	font-size:16px;
+	color:#000;
+	}
+	.welcome-slider #jssor_1 div.tableBlock.full div.tableCell {
+		width: 40% !important;
+	}
+	.welcome-slider #jssor_1 div.tableBlock.full div.tableCell2 {
+		width: 60% !important;
+	}	
+
+	div#tableWrap {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+	}
+
+	div#tableWrap div.tableBlock div.tableRow {
+		display: flex;
+		flex: 1;
+		/* margin: 5px; */
+	}
+
+	div#tableWrap div.tableBlock div.tableRow div.tableCell {
+		/* margin-right: 5px; */
+		/* flex: 1; */
+		width: 35%;
+		display: flex;
+		flex: 1;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-content: stretch;
+		align-items: center;
+		padding: 10px;
+		font-family: 'Abel', sans-serif;
+		font-size: 16px;
+		color:#000000;
+	}
+
+	div#tableWrap > div:nth-child(2) > div > div.tableCell {
+		display: flex;
+		flex-flow: column wrap;
+		flex: 1;
+	}
+	#tableWrap > div.tableBlock div div.tableCell > a > div > div > div > img {
+		display:block;
+		margin:0 auto;
+	}
+
+	div#tableWrap > div  div div.tableCell.nopad div {
+		display: flex;
+		flex-flow: column;
+		flex: 1;
+	}
+
+	div#tableWrap > div > div > div.tableCell > div.tableBlock div.tableRow {
+		display: flex;
+		flex: 1;
+		align-items: stretch;
+	}
+
+	div#tableWrap > div div div.tableCell.nopad div div.tableRow a {
+		display: flex;
+		flex: 1;
+	}
+
+	div#tableWrap div.tableBlock div.tableRow div.tableCell2 {
+		flex-grow: 1.25;
+	}
+
+	div.tableCell a, div.tableCell2 a {
+		display: flex;
+		flex: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	div#tableWrap > div.tableBlock {
+		margin: 5px 5px 0px 5px;
+	}
+	div#tableWrap > div.tableBlock:nth-child(4) {
+		margin-bottom:5px;
+	}
+
+	div#tableWrap div.tableBlock {
+		display:flex;
+	}
+
+	#tableWrap > div.tableBlock > div.tableRow > div.tableCell:nth-child(1), #tableWrap > div.tableBlock > div.tableRow > div.tableCell2:nth-child(1) {
+		margin-right: 5px;
+	}
+
+	#tableWrap > div > div > div.tableCell.nopad > div div div.tableCell {
+		width: 100%;
+		padding: 10px !important;
+		flex-flow:column;
+	}
+
+	.tableCell.nopad {
+		padding: 0px !important;
+	}
+
+	#tableWrap > div > div > div.tableCell > a > div > div > div {
+		padding: 0 !important;
+	}
+/* mainpage grid styles ends	 */
+
 
 
 .finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2, .finedine ul.listings li a section aside h4 {
@@ -198,72 +313,7 @@ body > div.my-container > ul li p {
 
 }
 
-.tableWrap {
-/*     overflow-x: hidden; */
-}
-.tableBlock {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 0px;
-    /*margin: 0 -15px;*/
-}
-.tableWrap > .tableBlock {
-	border-spacing:5px;
-}
-.tableWrap > .tableBlock {
-	margin-bottom:-5px;
-}
-.mlft10 {
-	margin-left:10px !important;
-}
-.mb10 {
-	margin-bottom:10px !important;
-}
-.tableRow {
-    display: table-row;
-}
-.tableCell, .tableCell2 {
-    display: table-cell;
-    padding: 10px;
-/*    border: 1px solid red;*/
-	vertical-align:middle;
-	text-align:center;
-	font-family: 'Abel', sans-serif;
-	font-size:16px;
-	color:#000;
-}
-.tableCell a, .tableCell2 a {
-	color:#ffffff;
-	}
-.tableCell {
-    width: 40%;
-}
-.tableCell2 {
-    width: 60%;
-}
-.nopad {
-	padding:0px;
-}
-.noborder {
-	border:none !important;	
-}
-.noborderspacing {
-	border-spacing:0px !important;
-}
-.img50 {
-	width:50% !important;
-	height:auto !important;
-	}
-	
-.img70 {
-width:70% !important;
-height:auto !important;
-}
 
-.img60 {
-width:60% !important;
-height:auto !important;
-}
 .hide {
 	display:none;
 }
@@ -579,9 +629,94 @@ ul.listings li a section aside figure {
 	}
 	ul.listings > li.list-items, ul.listings > li.list-items a, ul.listings > li.list-items a section {
 /* 		flex-grow:1; */
-	}	
+	}
+
 }
 @media screen and (max-width:480px) {
+#tableWrap {
+/*     overflow-x: hidden; */
+	display:table !important;
+	width:100%;
+}
+.tableBlock {
+    display: table !important;
+    border-collapse: separate;
+    border-spacing: 0px;
+    /*margin: 0 -15px;*/
+}
+div#tableWrap > div.tableBlock {
+	border-spacing:5px;
+}
+div#tableWrap > div.tableBlock {
+	margin:0 0 -5px 0 !important;
+}
+.mlft10 {
+	margin-left:10px !important;
+}
+.mb10 {
+	margin-bottom:10px !important;
+}
+.tableRow {
+    display: table-row !important;
+}
+.tableCell, .tableCell2 {
+    display: table-cell !important;
+    padding: 10px;
+/*    border: 1px solid red;*/
+	vertical-align:middle;
+	text-align:center;
+	font-family: 'Abel', sans-serif;
+	font-size:16px;
+	color:#000;
+}
+.tableCell a, .tableCell2 a {
+	color:#ffffff;
+	}
+.tableCell {
+    width: 40% !important;
+}
+.tableCell2 {
+    width: 60% !important;
+}
+#tableWrap > div > div > div.tableCell.nopad > div div div.tableCell {
+		width: 100%;
+		padding: 10px !important;
+	}
+.nopad {
+	padding:0px;
+}
+.noborder {
+	border:none !important;	
+}
+.noborderspacing {
+	border-spacing:0px !important;
+}
+.img40 {
+	width:40% !important;
+	height:auto !important;
+	display:block;
+	margin:0 auto;
+	}
+.img50 {
+	width:50% !important;
+	height:auto !important;
+	display:block;
+	margin:0 auto;
+	}
+	
+.img70 {
+width:70% !important;
+height:auto !important;
+display:block;
+margin:0 auto;
+}
+
+.img60 {
+width:60% !important;
+height:auto !important;
+display:block;
+margin:0 auto;
+}
 	ul.listings > li.list-items {
 		width:100%;
 		margin:0 !important;
