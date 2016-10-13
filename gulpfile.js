@@ -254,6 +254,10 @@ gulp.task('watch', function() {
     gulp.watch(jsonSources.in, ['json', browsersync.reload]);
 });
 
+// default travis CI
+gulp.task('travis', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json'], function() {
+});
+
 // default task
 gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'browsersync', 'watch'], function() {
     // sass changes
