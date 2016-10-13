@@ -6,4 +6,13 @@ node_js:
 
 before_script:
   - npm install -g gulp
-script: gulp  
+script: 
+  - gulp mainjs
+  - gulp html
+  - gulp images
+  - gulp fonts
+  - gulp css
+  - gulp js
+  - gulp dynamicJs
+  - gulp json
+
