@@ -68,15 +68,6 @@ a[href^="tel:"]:before {
 .main_menu_bg, body.details {
 	background-color:#0f2b50;
 }
-.icon_title {
-	text-align: center !important;
-	color: #fff;
-	width: 100%;
-	font-size: 13px;
-	font-weight: bold;
-	margin: 10px 0px 10px 0px;
-	float: left;
-}
 
 #heading span{font-family: 'Abel', sans-serif !important;}
 
