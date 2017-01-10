@@ -259,7 +259,4 @@ gulp.task('travis', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJ
 });
 
 // default task
-gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'browsersync', 'watch'], function() {
-    // sass changes
-    // gulp.watch([cssSources.watch, imguri.in], ['sass']);
-});
+gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'browsersync', 'watch']);
