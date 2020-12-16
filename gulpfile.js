@@ -101,14 +101,14 @@ console.log(dest);
 
 // clean the build folder
 gulp.task('clean', () => {
-    del([
+    return del([
         dest + '*'
     ]);
 });
 
 // load datas
 gulp.task('mainjs', () => {
-    gulp.src(mainjs.in)
+    return gulp.src(mainjs.in)
         .pipe($.if(devBuild === 'production', $.uglify()))
         .pipe(gulp.dest(mainjs.out))
         .pipe(browsersync.reload({ stream: true }));
@@ -172,10 +172,10 @@ gulp.task('css', () => {
     var source = gulp.src(cssSources.in);
     // .pipe(concat('style.css'))
     if (devBuild === "development") {
-        source.pipe(gulp.dest(cssSources.out))
+        return source.pipe(gulp.dest(cssSources.out))
             .pipe(browsersync.reload({ stream: true }));
     } else {
-        source.pipe($.size({ title: 'CSS in' }))
+        return source.pipe($.size({ title: 'CSS in' }))
             .pipe($.cleanCss({ processImport: false }))
             .pipe($.size({ title: 'CSS out' }))
             .pipe(gulp.dest(cssSources.out))
@@ -256,7 +256,8 @@ gulp.task('watch', gulp.parallel('browsersync', () => {
 }));
 
 // default travis CI
-gulp.task('travis', gulp.parallel('mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json'), () => {
+gulp.task('travis', gulp.parallel('mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json'), (done) => {
+    return done()
 });
 
 // default task
