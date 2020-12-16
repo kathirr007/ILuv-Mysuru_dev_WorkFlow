@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/kathirr007/ILuv-Mysuru_dev_WorkFlow.svg?branch=master)](https://travis-ci.org/kathirr007/ILuv-Mysuru_dev_WorkFlow)
 
-**[ILuv Mysuru Development Workflow](http://www.bullhorn.com)** is the prject of an app for the Namma Mysuru about the latest updates of Mysuru. Build from website to app Android app.
+**[ILuv Mysuru Development Workflow](http://www.bullhorn.com)** is the prject of an app for the Namma Mysuru about the latest updates of Mysuru.
 
-To check live version please checkout **[here](https://kathirr007.github.io/ILuv-Mysuru_dev_WorkFlow/builds/production/)**
+To check live version please checkout **[here](https://iluv-mysuru.vercel.app/)**
 
 ## To Build and Run the project
 
