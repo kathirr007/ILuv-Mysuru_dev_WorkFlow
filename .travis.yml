@@ -1,9 +1,34 @@
 language: node_js
 node_js:
-  - "12"
-
+- '12'
+env:
+  global:
+    secure: r79u0FiesJ5sFhD0b+3YUtPk6Nw1zG3rmSiah9c1y0VZo7yXDaq6M8TR+mhIZ5Zg8y2Qr38Qp4zRaGzQy/MOVSyvpKSg8Smfe3U7b+bsOKNHF1sGOFTSutpTbJ44MYF6pHLJvTpCmtf8/286DLPIFd1FnVBbd8KU0ouOlCLWAhDD5Lro0wmJjz7/FuIsGiCaCvMDq7jisdni4MwcPQp2jGgWIhSMSd3lrDOt0nI/+xyQ3rCxqNLcnDvU40BDGQ1mrGX8C9lGF5iy23KhA/W0epmmXmnmhsTYfB30DyGUK5CWnmY0yCz1mpv7p/BFWeT936bKgl/mpNkA1cQMHw0KBP/FtPNXght8UWSlDCSn/Hf/AmylH/T5e9/D52LBkOu9+q0B+6fMp/uWaGEzqgpOJrfE9XBOtUqfZWWVLoELCvAnV3WbGaQL7o641HQMqVB3bHG2CCsHc2qktvIbMvU1jSbjQm7U8EQ5E4/LBJ3KTVa9OkU+/12MFFnmZ7F4KyIQGsoVlZX6ZTAA0VAqtUIHUlIIHZevrt1atNvc2FCakxIV4dYubP2OtFcKgLbHrZznbOHoewTcPVXCYQpdeTVqE4ZRVyCrveJznudkCT//fzh9cIRMO+5hCnwu1+TJM1lqzl1JSjzeOIGUwegHgzyJjS8UcMfKNIOPRqu+bLvCEK8=
+branches:
+  only:
+  - master
+  except:
+  - gh-pages
+before_install:
+- chmod 755 ./deploy-ghpages.sh
 before_script:
-  - npm install -g gulp
-script: 
-  - gulp travis
+- git config --global user.email "travis@travis-ci.org"
+- git config --global user.name "Travis"
+before_deploy:
+- git config --global user.email "travis@travis-ci.org"
+- git config --global user.name "Travis"
+deploy:
+# - edge: true
+#   skip_cleanup: true
+#   provider: script
+#   script: gulp deploy
   
+install:
+- npm install
+script:
+# - gulp travis
+- chmod +x ./deploy-ghpages.sh
+- chmod +x ./deploy.sh
+after_success:
+- "./deploy-ghpages.sh"
+# - gulp deploy
