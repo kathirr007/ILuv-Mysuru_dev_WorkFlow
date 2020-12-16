@@ -4,7 +4,7 @@ function buildSlider(sliderImagesList) {
 		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 285px; overflow: hidden;">';
     sliderImagesList.forEach(function(item) {
         var img_name = encodeURI(item.img_path);
-        sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="' + item.img_path + '"/></div>';
+        sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" referrerpolicy="no-referrer" src="' + item.img_path + '"/></div>';
     });
     sliderContent += '<div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="assets/images/theorem.jpg"/></a></div> \
 		</div>\

@@ -73,7 +73,7 @@ window.onload = function() {
                     thumbImage = encodeURI(arr[i].galleries[0].img_path);
                 }
                 out += '<li class="list-items"><a class="clearfix" style="display:block;" href="' + pathname + 'detail.html?pid='+arr[i].placeid+'">\
-                        <section class="list-contents clearfix"><figure><img src="'+thumbImage+'" alt="" width="125" height="75" /></figure>\
+                        <section class="list-contents clearfix"><figure><img referrerpolicy="no-referrer" src="'+thumbImage+'" alt="" width="125" height="75" /></figure>\
                         <aside><h4>'+arr[i].title+'</h4><p>'+arr[i].address+'</p><figure class="ratingstars">'+getstars(ratingstars)+'</figure>'+kms+'Kms from city</aside>\
                         </section>\
                         </a>\
@@ -101,7 +101,7 @@ window.onload = function() {
                             		  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 285px; overflow: hidden;">';
                                 sliderImagesList.forEach(function(item) {
                                     var img_name = encodeURI(item.img_path);
-                                    sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" src="' + item.img_path + '"/></div>';
+                                    sliderContent += '<div data-p="225.00" style="display: none;"><img data-u="image" referrerpolicy="no-referrer" src="' + item.img_path + '"/></div>';
                                 });
                                 sliderContent += '<div data-p="225.00" data-po="80% 55%" style="display: none;"> <a href="http://theoreminc.net"><img data-u="image" src="assets/images/theorem.jpg"/></a></div> \
                             		</div>\

@@ -19,7 +19,7 @@ for (i = 0; i < arr.length; i++) {
         thumbImage = encodeURI(arr[i].galleries[0].img_path);
     }
     out += '<li class="list-items"><a class="clearfix" style="display:block;" href="' + pathname + 'detail.html?pid='+arr[i].placeid+'">\
-            <section class="list-contents clearfix"><figure><img src="'+thumbImage+'" alt="" width="125" height="75" /></figure>\
+            <section class="list-contents clearfix"><figure><img referrerpolicy="no-referrer" src="'+thumbImage+'" alt="" width="125" height="75" /></figure>\
             <aside><h4>'+arr[i].title+'</h4><p>'+arr[i].address+'</p><figure class="ratingstars">'+getstars(ratingstars)+'</figure>'+kms+'Kms from city</aside>\
             </section>\
             </a>\

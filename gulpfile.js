@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({ lazy: true });
 
 // source variables
-var devBuild, source, mainjs, dest, htmlSources, imagesSources, imguri, cssSources, fontsSources, coffeeSources, jsSources, sassSources, jsonSources, sassStyle, syncOpts;
+var devBuild, source, mainjs, dest, htmlSources, imagesSources, imguri, cssSources, fontsSources, jsSources, jsonSources, sassStyle, syncOpts;
 
 // file locations
 devBuild = process.env.NODE_ENV || 'development';
@@ -17,7 +17,7 @@ if (devBuild === 'development') {
     dest = 'builds/production/';
     // sassStyle = 'compressed';
 }
-source = 'source/assets/';
+source = './source/assets/';
 mainjs = { in : source + "*.js",
     out: dest
 };
@@ -88,7 +88,7 @@ syncOpts = {
         baseDir: dest,
         index: 'index.html'
     },
-    open: true,
+    open: false,
     notify: true
 };
 
@@ -100,14 +100,14 @@ console.log(pkg.name + ' ' + pkg.version + ', ' + devBuild + ' build');
 console.log(dest);
 
 // clean the build folder
-gulp.task('clean', function() {
+gulp.task('clean', () => {
     del([
         dest + '*'
     ]);
 });
 
 // load datas
-gulp.task('mainjs', function() {
+gulp.task('mainjs', () => {
     gulp.src(mainjs.in)
         .pipe($.if(devBuild === 'production', $.uglify()))
         .pipe(gulp.dest(mainjs.out))
@@ -115,12 +115,12 @@ gulp.task('mainjs', function() {
 });
 
 // Prettify source files
-// gulp.task('prettify', function() {
+// gulp.task('prettify', () => {
 
 // }
 
 // build HTML files
-gulp.task('minifyTest', function() {
+gulp.task('minifyTest', () => {
 	return gulp.src(jsSources.in)
         .pipe($.newer(jsSources.out))
         .pipe($.uglify())
@@ -128,7 +128,7 @@ gulp.task('minifyTest', function() {
 });
 
 // build HTML files
-gulp.task('html', function() {
+gulp.task('html', () => {
     var page = gulp.src(htmlSources.in)
     			   .pipe($.jsbeautifier({"max_preserve_newlines": 0}))
     			   .pipe($.preprocess({ context: htmlSources.context }));
@@ -144,7 +144,7 @@ gulp.task('html', function() {
 });
 
 // manage images
-gulp.task('images', function() {
+gulp.task('images', () => {
     return gulp.src(imagesSources.in)
         .pipe($.newer(imagesSources.out))
         .pipe($.imagemin())
@@ -152,7 +152,7 @@ gulp.task('images', function() {
 });
 
 // convert inline images to dataURIs in SCSS source
-gulp.task('imguri', function() {
+gulp.task('imguri', () => {
     return gulp.src(imguri.in)
         .pipe($.imagemin())
         .pipe($.imacss(imguri.filename, imguri.namespace))
@@ -160,7 +160,7 @@ gulp.task('imguri', function() {
 });
 
 // copy fonts
-gulp.task('fonts', function() {
+gulp.task('fonts', () => {
     return gulp.src(fontsSources.in)
         .pipe($.newer(fontsSources.out))
         .pipe(gulp.dest(fontsSources.out));
@@ -168,7 +168,7 @@ gulp.task('fonts', function() {
 
 // compile css
 
-gulp.task('css', function() {
+gulp.task('css', () => {
     var source = gulp.src(cssSources.in);
     // .pipe(concat('style.css'))
     if (devBuild === "development") {
@@ -187,7 +187,7 @@ gulp.task('css', function() {
 });
 
 // compile Sass
-// gulp.task('sass', ['imguri'], function() {
+// gulp.task('sass', ['imguri'], () => {
 // 	return gulp.src(cssSources.in)
 // 		.pipe(sass(cssSources.sassOpts))
 // 		.pipe(size({title: 'CSS in '}))
@@ -197,7 +197,7 @@ gulp.task('css', function() {
 // 		.pipe(browsersync.reload({ stream: true }));
 // });
 
-gulp.task('js', function() {
+gulp.task('js', () => {
     // if (devBuild === "development") {
     return gulp.src(jsSources.in)
         .pipe($.newer(jsSources.out))
@@ -208,7 +208,7 @@ gulp.task('js', function() {
 
 });
 
-gulp.task('dynamicJs', function() {
+gulp.task('dynamicJs', () => {
     return gulp.src(dynamicContentsJs.in).pipe($.preprocess())
         .pipe($.rename("dynamicContents.js"))
         .pipe($.if(devBuild === 'production', $.uglify()))
@@ -216,7 +216,7 @@ gulp.task('dynamicJs', function() {
 
 });
 
-gulp.task('json', function() {
+gulp.task('json', () => {
     if (devBuild === "development") {
         return gulp.src(jsonSources.in)
             .pipe($.newer(jsonSources.out))
@@ -239,24 +239,25 @@ gulp.task('json', function() {
 });
 
 // browser sync
-gulp.task('browsersync', function() {
+gulp.task('browsersync', () => {
     browsersync(syncOpts);
 });
 
 // watch
-gulp.task('watch', function() {
-    gulp.watch(htmlSources.watch, ['html', browsersync.reload]);
-    gulp.watch(imagesSources.in, ['images']);
-    gulp.watch(fontsSources.in, ['fonts']);
-    gulp.watch([cssSources.watch, imguri.in], ['css']);
-    gulp.watch(jsSources.in, ['js', browsersync.reload]);
-    gulp.watch(dynamicContentsJs.watch, ['dynamicJs', browsersync.reload]);
-    gulp.watch(jsonSources.in, ['json', browsersync.reload]);
-});
+gulp.task('watch', gulp.parallel('browsersync', () => {
+    $.watch(htmlSources.watch, gulp.series('html', browsersync.reload));
+    $.watch(imagesSources.in, gulp.series('images'));
+    $.watch(fontsSources.in, gulp.series('fonts'));
+    $.watch(cssSources.watch, gulp.series('css'));
+    $.watch(imguri.in, gulp.series('css', 'imguri'));
+    $.watch(jsSources.in, gulp.series('js', browsersync.reload));
+    $.watch(dynamicContentsJs.watch, gulp.series('dynamicJs', browsersync.reload));
+    $.watch(jsonSources.in, gulp.series('json', browsersync.reload));
+}));
 
 // default travis CI
-gulp.task('travis', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json'], function() {
+gulp.task('travis', gulp.parallel('mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json'), () => {
 });
 
 // default task
-gulp.task('default', ['mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'browsersync', 'watch']);
+gulp.task('default', gulp.parallel('mainjs', 'html', 'images', 'fonts', 'css', 'js', 'dynamicJs', 'json', 'watch'));

@@ -451,6 +451,7 @@ ul.listings li a section > figure {
 ul.listings li a section > figure > img {
 	width:100%;
 	height:100%;
+	object-fit: cover;
 }
 ul.listings li a section aside {
 	float:right;
