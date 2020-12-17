@@ -10,7 +10,11 @@
   "scripts": {
     "start": "gulp",
     "prebuild": "cross-env NODE_ENV=production gulp clean",
-    "build": "cross-env NODE_ENV=production gulp travis"
+    "build": "cross-env NODE_ENV=production gulp travis",
+    "addBuild": "git add .",
+    "commitBuild": "git commit -m",
+    "pushBuild": "git push",
+    "postbuild": "npm run addBuild && npm run commitBuild -- Fresh-build-added && npmm run pushBuild"
   },
   "author": "Theorem India Pvt.Ltd.",
   "license": "ISC",
