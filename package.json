@@ -14,7 +14,7 @@
     "addBuild": "git add .",
     "commitBuild": "git commit -m",
     "pushBuild": "git push",
-    "postbuild": "npm run addBuild && npm run commitBuild -- Fresh-build-added && npmm run pushBuild"
+    "postbuild": "npm run addBuild && npm run commitBuild -- Fresh-build-added && npm run pushBuild"
   },
   "author": "Theorem India Pvt.Ltd.",
   "license": "ISC",
